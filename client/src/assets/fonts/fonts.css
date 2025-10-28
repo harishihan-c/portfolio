@@ -1,25 +1,26 @@
 @font-face {
   font-family: integral-regular;
-  src: url("./Fontspring-DEMO-integralcf-regular.otf");
+  src: url("./integralcf-regular.otf");
 }
 
 @font-face {
   font-family: integral-medium;
-  src: url("./Fontspring-DEMO-integralcf-medium.otf");
+  src: url("./integralcf-medium.otf");
 }
 @font-face {
   font-family: integral-heavy;
-  src: url("./Fontspring-DEMO-integralcf-heavy.otf");
+  src: url("./integralcf-heavy.otf");
 }
 @font-face {
   font-family: integral-extra-bold;
-  src: url("./Fontspring-DEMO-integralcf-extrabold.otf");
+  src: url("./integralcf-extrabold.otf");
+  font-weight: 700;
 }
 @font-face {
   font-family: integral-demi-bold;
-  src: url("./Fontspring-DEMO-integralcf-demibold.otf");
+  src: url("./integralcf-demibold.otf");
 }
 @font-face {
   font-family: integral-bold;
-  src: url("./Fontspring-DEMO-integralcf-bold.otf");
+  src: url("./integralcf-bold.otf");
 }
