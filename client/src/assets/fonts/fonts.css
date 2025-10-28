@@ -1,37 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @font-face {
   font-family: integral-regular;
-  src: url("../fonts/Fontspring-DEMO-integralcf-regular.otf");
+  src: url("./Fontspring-DEMO-integralcf-regular.otf");
 }
 
 @font-face {
   font-family: integral-medium;
-  src: url("../fonts/Fontspring-DEMO-integralcf-medium.otf");
+  src: url("./Fontspring-DEMO-integralcf-medium.otf");
 }
 @font-face {
   font-family: integral-heavy;
-  src: url("../fonts/Fontspring-DEMO-integralcf-heavy.otf");
+  src: url("./Fontspring-DEMO-integralcf-heavy.otf");
 }
 @font-face {
   font-family: integral-extra-bold;
-  src: url("../fonts/Fontspring-DEMO-integralcf-extrabold.otf");
+  src: url("./Fontspring-DEMO-integralcf-extrabold.otf");
 }
 @font-face {
   font-family: integral-demi-bold;
-  src: url("../fonts/Fontspring-DEMO-integralcf-demibold.otf");
+  src: url("./Fontspring-DEMO-integralcf-demibold.otf");
 }
 @font-face {
   font-family: integral-bold;
-  src: url("../fonts/Fontspring-DEMO-integralcf-bold.otf");
-}
-
-@theme {
-  --font-primary: poppins, "sans-serif";
-  --font-integral-regular: integral-regular, "sans-serif";
-  --font-integral-medium: integral-medium, "sans-serif";
-  --font-integral-bold: integral-bold, "sans-serif";
-  --font-integral-demi-bold: integral-demi-bold, "sans-serif";
-  --font-integral-extra-bold: integral-extra-bold, "sans-serif";
-  --font-integral-heavy: integral-heavy, "sans-serif";
+  src: url("./Fontspring-DEMO-integralcf-bold.otf");
 }
