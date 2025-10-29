@@ -13,7 +13,7 @@
   --font-integral-heavy: integral-heavy, "sans-serif";
 }
 
-
 body {
   font-family: "poppins", sans-serif;
+  overflow-x: hidden;
 }
