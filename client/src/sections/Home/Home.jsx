@@ -2,35 +2,16 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  // useEffect(() => {
-  //   // Initialize a new Lenis instance for smooth scrolling
-  //   const lenis = new Lenis();
-
-  //   // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-  //   lenis.on("scroll", ScrollTrigger.update);
-
-  //   // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-  //   // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-  //   gsap.ticker.add((time) => {
-  //     lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-  //   });
-
-  //   // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-  //   gsap.ticker.lagSmoothing(0);
-  // }, []);
-
   const containerRef = useRef(null);
 
   const helloRef = useRef(null);
   const helloVanishRef = useRef(null);
 
-  const nameSectionRef = useRef(null);
   const nameOverlayRef = useRef(null);
   const nameTextRef = useRef(null);
 
@@ -41,6 +22,29 @@ const Home = () => {
     gsap.set(nameOverlayRef.current, { x: "-30%" });
     gsap.set(helloVanishRef.current, { x: "-100%" });
     gsap.set(finalRef.current, { autoAlpha: 0, y: -200, z: 1000 });
+
+    const introTl = gsap.timeline({});
+
+    introTl
+      .to(
+        nameOverlayRef.current,
+        {
+          x: "110%",
+          duration: 3,
+          ease: "power3",
+        },
+        "+=0.1"
+      )
+      .to(
+        nameTextRef.current,
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "power3",
+        },
+        "<0.2"
+      );
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -50,34 +54,6 @@ const Home = () => {
         pin: true,
         pinSpacing: true,
         markers: true,
-      },
-    });
-
-    //name overlay
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      onEnter: () => {
-        gsap.to(
-          nameOverlayRef.current,
-          {
-            x: "110%",
-            duration: 3,
-            ease: "power3",
-          },
-          "+=0.1"
-        );
-      },
-    });
-
-    //name text
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      onEnter: () => {
-        gsap.to(nameTextRef.current, {
-          opacity: 1,
-          duration: 1,
-          ease: "power3",
-        });
       },
     });
 
@@ -121,6 +97,12 @@ const Home = () => {
     });
 
     tl.to({}, { duration: 2 });
+
+    return () => {
+      introTl.kill();
+      tl.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   });
   return (
     <div
