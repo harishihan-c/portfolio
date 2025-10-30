@@ -30,19 +30,19 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <section id="home" className="h-screen">
+      <section id="home">
         <Home />
       </section>
-      <section id="about" className="h-screen">
+      <section id="about">
         <About />
       </section>
-      <section id="skills" className="h-screen">
+      <section id="skills">
         <Skills />
       </section>
-      <section id="projects" className="h-screen">
+      <section id="projects">
         <Projects />
       </section>
-      <section id="contact" className="h-screen">
+      <section id="contact">
         <Contact />
       </section>
     </div>
