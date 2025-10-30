@@ -96,7 +96,7 @@ const Home = () => {
       ease: "power1.inOut",
     });
 
-    tl.to({}, { duration: 2 });
+    tl.to({}, { duration: 1 });
 
     return () => {
       introTl.kill();
