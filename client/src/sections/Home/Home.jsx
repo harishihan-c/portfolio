@@ -21,12 +21,12 @@ const Home = () => {
   useGSAP(() => {
     gsap.set(nameOverlayRef.current, { x: "0%" });
     gsap.set(helloVanishRef.current, { x: "-100%" });
-    gsap.set(finalRef.current, { autoAlpha: 1, y: 50 });
+    gsap.set(finalRef.current, { autoAlpha: 0, z: 1000, y: -100 });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 30%",
-        end: "+=1000",
+        end: "+=600",
         scrub: true,
         pin: true,
         pinSpacing: true,
@@ -69,18 +69,19 @@ const Home = () => {
     tl.to(
       finalRef.current,
       {
-        autoAlpha: 1,
-        y: 0,
+        autoAlpha: 2,
+        z: 10,
+        y: -200,
         duration: 0.6,
-        ease: "power1.out",
+        ease: "power1.inOut",
       },
-      "<0.1"
+      "+=0.1"
     );
   });
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center ml-14 h-screen relative top-40"
+      className=" flex flex-col justify-center ml-14 h-screen relative top-40 perspective-distant"
     >
       <p
         ref={helloRef}
@@ -95,7 +96,7 @@ const Home = () => {
 
       <p
         ref={nameTextRef}
-        className="font-integral-extra-bold text-6xl sm:text-7xl mt-6 w-fit relative"
+        className="font-integral-extra-bold text-4xl sm:text-7xl mt-6 w-fit relative"
       >
         I'm{" "}
         <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block ">
@@ -109,7 +110,7 @@ const Home = () => {
 
       <div
         ref={finalRef}
-        className="font-integral-extra-bold text-6xl sm:text-7xl mt-6 text-center"
+        className="font-integral-extra-bold text-4xl sm:text-7xl mt-6 text-center"
       >
         <p>A FullStack </p>
         <p>Developer, Designer</p> <p> and an Artist</p>
