@@ -26,7 +26,7 @@ const Home = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 30%",
-        end: "+=1500",
+        end: "+=1000",
         scrub: true,
         pin: true,
         pinSpacing: true,
@@ -34,14 +34,18 @@ const Home = () => {
       },
     });
 
-    // 1️⃣ Reveal the name
-    tl.to(nameOverlayRef.current, {
-      x: "110%", // slide right to reveal name
-      duration: 0.4,
-      ease: "none",
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      onEnter: () => {
+        gsap.to(nameOverlayRef.current, {
+          x: "110%",
+          duration: 0.6,
+          ease: "",
+        });
+      },
     });
 
-    // 2️⃣ Cover Hello
+    //Cover Hello
     tl.to(
       helloVanishRef.current,
       {
@@ -52,20 +56,16 @@ const Home = () => {
       "+=0.2"
     );
 
-    // 3️⃣ Move and shrink name to top (pin-like effect)
-    tl.to(
-      nameTextRef.current,
-      {
-        y: "-40vh", // move up to top area
-        scale: 0.45,
-        transformOrigin: "left top",
-        duration: 0.3,
-        ease: "power2.inOut",
-      },
-      "+=0.2"
-    );
+    //Move and shrink name to top
+    tl.to(nameTextRef.current, {
+      y: "-35vh", // move up to top area
+      scale: 0.45,
+      transformOrigin: "left top",
+      duration: 1,
+      ease: "power2.inOut",
+    });
 
-    // 4️⃣ Show final text (FullStack Developer...)
+    //Show final text
     tl.to(
       finalRef.current,
       {
