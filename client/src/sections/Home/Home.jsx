@@ -40,12 +40,12 @@ const Home = () => {
     gsap.set(nameTextRef.current, { opacity: 0 });
     gsap.set(nameOverlayRef.current, { x: "-30%" });
     gsap.set(helloVanishRef.current, { x: "-100%" });
-    gsap.set(finalRef.current, { autoAlpha: 0 ,  y: -200,});
+    gsap.set(finalRef.current, { autoAlpha: 0, y: -200, z: 1000 });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 30%",
-        end: "+=1000",
+        end: "+=2000",
         scrub: true,
         pin: true,
         pinSpacing: true,
@@ -113,14 +113,14 @@ const Home = () => {
     );
 
     //Show final text
-    tl.to(
-      finalRef.current,
-      {
-        autoAlpha: 2,
-        duration: 1,
-        ease: "power1.inOut",
-      },
-    );
+    tl.to(finalRef.current, {
+      z: 0,
+      autoAlpha: 1,
+      duration: 3,
+      ease: "power1.inOut",
+    });
+
+    tl.to({}, { duration: 2 });
   });
   return (
     <div
@@ -148,7 +148,7 @@ const Home = () => {
         </span>
         <div
           ref={nameOverlayRef}
-          className="bg-white w-[110%] h-full absolute top-0 -right-45 -skew-x-12 "
+          className="bg-white w-[160%] h-full absolute top-0 left-0 -skew-x-12 "
         ></div>
       </p>
 
