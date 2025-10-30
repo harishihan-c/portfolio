@@ -28,7 +28,7 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="fixed left-1/2 -translate-x-1/2 w-2xl mt-5 px-10 py-2 flex justify-between items-center rounded-full border text-center ">
+    <div className="fixed z-50 left-1/2 -translate-x-1/2 w-2xl mt-5 px-10 py-2 flex justify-between items-center rounded-full border text-center ">
       <a
         onClick={() => setActiveSection("home")}
         className={`${
