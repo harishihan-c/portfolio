@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const activeColor = "bg-[#D7FF00] ";
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -49,15 +48,19 @@ const NavBar = () => {
   }, []);
   return (
     <div
-      className={`fixed z-9999 left-1/2 -translate-x-1/2 w-2xl mt-5 px-10 py-2 flex justify-between items-center rounded-full border text-center backdrop-blur-xs  ${
-        isVisible ? "translate-y-0 duration-500 " : "-translate-y-[200%] duration-500"
+      className={`fixed z-9999 left-1/2 -translate-x-1/2 w-2xl mt-2 px-10 py-1 flex justify-between items-center rounded-full text-center backdrop-blur-3xl  ${
+        isVisible
+          ? "translate-y-0 duration-500 "
+          : "-translate-y-[200%] duration-500"
       }`}
     >
       <a
         onClick={() => setActiveSection("home")}
         className={`${
-          activeSection === "home" ? activeColor : ""
-        } w-28 px-2 py-3 rounded-full`}
+          activeSection === "home"
+            ? "line-through decoration-lime-primary decoration-4 "
+            : ""
+        } w-28 px-2 py-2 `}
         href="#home"
       >
         Home
@@ -66,16 +69,20 @@ const NavBar = () => {
         onClick={() => setActiveSection("about")}
         href="#about"
         className={`${
-          activeSection === "about" ? activeColor : ""
-        } w-28 px-2 py-3 rounded-full`}
+          activeSection === "about"
+            ? "line-through decoration-lime-primary decoration-4 "
+            : ""
+        } w-28 px-2 py-2`}
       >
         About
       </a>
       <a
         onClick={() => setActiveSection("skills")}
         className={`${
-          activeSection === "skills" ? activeColor : ""
-        } w-28 px-2 py-3 rounded-full`}
+          activeSection === "skills"
+            ? "line-through decoration-lime-primary decoration-4 "
+            : ""
+        }w-28 px-2 py-2`}
         href="#skills"
       >
         Skills
@@ -83,8 +90,10 @@ const NavBar = () => {
       <a
         onClick={() => setActiveSection("projects")}
         className={`${
-          activeSection === "projects" ? activeColor : ""
-        } w-28 px-2 py-3 rounded-full  `}
+          activeSection === "projects"
+            ? "line-through decoration-lime-primary decoration-4 "
+            : ""
+        } w-28 px-2 py-2 `}
         href="#projects"
       >
         Projects
@@ -93,8 +102,10 @@ const NavBar = () => {
       <a
         onClick={() => setActiveSection("contact")}
         className={`${
-          activeSection === "contact" ? activeColor : ""
-        } w-28 px-2 py-3 rounded-full`}
+          activeSection === "contact"
+            ?"line-through decoration-lime-primary decoration-4 "
+            : ""
+        } w-28 px-2 py-2`}
         href="#contact"
       >
         Contact
