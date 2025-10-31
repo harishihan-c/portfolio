@@ -18,32 +18,24 @@ const Home = () => {
   const finalRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set(nameTextRef.current, { opacity: 0 });
-    gsap.set(nameOverlayRef.current, { x: "-30%" });
-    gsap.set(helloVanishRef.current, { x: "-100%" });
+    // gsap.set(nameOverlayRef.current, { x: "-30%" });
+    // gsap.set(helloVanishRef.current, { x: "-100%" });
     gsap.set(finalRef.current, { autoAlpha: 0, y: -200, z: 1000 });
 
     const introTl = gsap.timeline({});
 
-    introTl
-      .to(
-        nameOverlayRef.current,
-        {
-          x: "110%",
-          duration: 3,
-          ease: "power3",
-        },
-        "+=0.1"
-      )
-      .to(
-        nameTextRef.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "power3",
-        },
-        "<0.2"
-      );
+    introTl.fromTo(
+      nameTextRef.current,
+      {
+        clipPath: "inset(0% 100% 0% 0%)",
+      },
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1,
+        opacity: 1,
+      },
+      "<0.2"
+    );
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -107,31 +99,27 @@ const Home = () => {
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center ml-14 h-screen relative top-40 perspective-distant"
+      className=" flex flex-col justify-center ml-14 h-full relative perspective-distant bg-amber-200"
     >
       <p
         ref={helloRef}
-        className="relative w-fit font-integral-extra-bold text-6xl sm:text-7xl mt-6 "
+        className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-5xl sm:text-7xl "
       >
         Hello,
-        <div
+        {/* <div
           ref={helloVanishRef}
           className="bg-white w-[110%] h-[120%] absolute top-0 -left-2 -skew-x-12"
-        ></div>
+        ></div> */}
       </p>
 
       <p
         ref={nameTextRef}
-        className="font-integral-extra-bold text-4xl sm:text-7xl mt-6 w-fit relative"
+        className="font-integral-extra-bold text-5xl sm:text-7xl mt-6 w-fit relative [clip-path:inset(0%_100%_0%_0%)]"
       >
         I'm{" "}
-        <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block ">
+        <span className=" bg-black text-[#D7FF00] px-5 pb-4  inline-block">
           Harry,
         </span>
-        <div
-          ref={nameOverlayRef}
-          className="bg-white w-[160%] h-full absolute top-0 left-0 -skew-x-12 "
-        ></div>
       </p>
 
       <div
