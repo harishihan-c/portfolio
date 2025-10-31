@@ -15,9 +15,12 @@ const Home = () => {
 
   const finalRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.set(finalRef.current, { autoAlpha: 0, });
+  useGSAP((context) => {
+    gsap.set(finalRef.current, { autoAlpha: 0, z: 1000, y: -200 });
 
+    gsap.config({ trialWarn: false });
+
+    // For any screen size
     const introTl = gsap.timeline({});
 
     introTl.fromTo(
@@ -33,71 +36,88 @@ const Home = () => {
       "<0.2"
     );
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=2000",
-        scrub: true,
-        pin: true,
-        pinSpacing: true,
-        markers: true,
-      },
-    });
+    let mm = gsap.matchMedia(context);
 
-    //Cover Hello
-    tl.fromTo(
-      helloRef.current,
+    mm.add(
       {
-        clipPath: "inset(0% 0% 0% 0%)",
+        isMobile: "(max-width:639px)",
+        isDesktop: "(min-width: 640px)",
       },
-      {
-        clipPath: "inset(0% 0% 0% 100%)",
-        duration: 1,
-      },
-      "+=0.2"
+      (context) => {
+        let { isMobile, isDesktop } = context.conditions;
+
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            pinSpacing: true,
+            markers: true,
+          },
+        });
+
+        //Cover Hello
+        tl.fromTo(
+          helloRef.current,
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+          },
+          {
+            clipPath: "inset(0% 0% 0% 100%)",
+            duration: 0.05,
+          }
+        );
+
+        //Move and shrink name to top
+        tl.to(
+          nameTextRef.current,
+          {
+            scale: 0.45,
+            transformOrigin: "left top",
+            duration: 0.5,
+          },
+          "a"
+        );
+
+        tl.to(
+          nameTextRef.current,
+          {
+            y: isMobile ? "-30vh" : "-40vh",
+            duration: 0.6,
+            ease: "power2.inOut",
+          },
+          "a"
+        );
+
+        //Show final text
+        tl.to(
+          finalRef.current,
+          {
+            y: isMobile ? -150 : -200,
+            z: 0,
+            autoAlpha: 1,
+            duration: 0.7,
+            ease: "power1.inOut",
+          },
+          "<0.1"
+        );
+
+        tl.to({}, { duration: 0.1 });
+      }
     );
-
-    //Move and shrink name to top
-    tl.to(
-      nameTextRef.current,
-      {
-        scale: 0.45,
-        transformOrigin: "left top",
-      },
-      "a"
-    );
-
-    tl.to(
-      nameTextRef.current,
-      {
-        y: "-55vh", // move up to top area
-        duration: 1,
-        ease: "power2.inOut",
-      },
-      "a"
-    );
-
-    //Show final text
-    tl.to(finalRef.current, {
-      z: 0,
-      autoAlpha: 1,
-      duration: 3,
-      ease: "power1.inOut",
-    });
-
-    tl.to({}, { duration: 1 });
 
     return () => {
       introTl.kill();
-      tl.kill();
+      mm.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   });
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center ml-14 h-full relative perspective-distant bg-amber-200"
+      className=" flex flex-col justify-center ml-14 h-screen relative perspective-distant"
     >
       <p
         ref={helloRef}
@@ -108,7 +128,7 @@ const Home = () => {
 
       <p
         ref={nameTextRef}
-        className="font-integral-extra-bold text-5xl sm:text-7xl mt-6 w-fit relative [clip-path:inset(0%_100%_0%_0%)]"
+        className="font-integral-extra-bold text-5xl sm:text-7xl mt-6 w-fit [clip-path:inset(0%_100%_0%_0%)]"
       >
         I'm{" "}
         <span className=" bg-black text-[#D7FF00] px-5 pb-4  inline-block">
