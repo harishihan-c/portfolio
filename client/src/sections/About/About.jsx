@@ -38,8 +38,33 @@ const About = () => {
         </h1>
       </div>
 
-      <div className="w-[90%] h-[80%] flex items-center justify-evenly mx-auto px-4 py-4 ">
-        <p className="w-[50%] bg-[#D7FF00] px-8 py-11">
+      <div>
+        <p>
+          I'm Harishihan Chandrakumar — a Full Stack Developer, Designer, and
+          Artist. I love turning ideas into interactive experiences, whether
+          it's building web apps with the MERN stack, designing clean and
+          user-friendly interfaces, or creating artwork that inspires. I enjoy
+          solving real problems with code, experimenting with new technologies,
+          and bringing creativity into every project I work on. I enjoy working
+          across diverse domains — building web applications, designing
+          intuitive interfaces, and expressing ideas through art
+        </p>
+        <div>
+          <img src="" alt="" />
+          <div>
+            <button>Download CV</button>
+            <button>Reach Me</button>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        [ development isn’t just about writing code — it’s about creating things
+        that make an impact. ]
+      </p>
+
+      {/* <div className="w-[90%] flex items-center justify-evenly mx-auto px-4 py-4 ">
+        <p className="w-[90%] bg-[#D7FF00] px-8 py-11">
           Hi, I’m Harishihan Chandrakumar — a Full Stack Developer, Designer,
           and Artist.
           <br /> <br />I love turning ideas into interactive experiences,
@@ -52,7 +77,7 @@ const About = () => {
           through art <br /> <br /> For me, development isn’t just about writing
           code — it’s about creating things that make an impact.
         </p>
-        <div className="h-full flex flex-col items-center justify-center  ">
+        {/* <div className="h-full flex flex-col items-center justify-center  ">
           <div className="overflow-hidden">
             <img
             src={assets.me}
@@ -66,8 +91,8 @@ const About = () => {
               Reach Me
             </button>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 };
