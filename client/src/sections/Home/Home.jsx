@@ -10,17 +10,13 @@ const Home = () => {
   const containerRef = useRef(null);
 
   const helloRef = useRef(null);
-  const helloVanishRef = useRef(null);
 
-  const nameOverlayRef = useRef(null);
   const nameTextRef = useRef(null);
 
   const finalRef = useRef(null);
 
   useGSAP(() => {
-    // gsap.set(nameOverlayRef.current, { x: "-30%" });
-    // gsap.set(helloVanishRef.current, { x: "-100%" });
-    gsap.set(finalRef.current, { autoAlpha: 0, y: -200, z: 1000 });
+    gsap.set(finalRef.current, { autoAlpha: 0, });
 
     const introTl = gsap.timeline({});
 
@@ -40,7 +36,7 @@ const Home = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 30%",
+        start: "top top",
         end: "+=2000",
         scrub: true,
         pin: true,
@@ -50,12 +46,14 @@ const Home = () => {
     });
 
     //Cover Hello
-    tl.to(
-      helloVanishRef.current,
+    tl.fromTo(
+      helloRef.current,
       {
-        x: "0%",
-        duration: 0.4,
-        ease: "none",
+        clipPath: "inset(0% 0% 0% 0%)",
+      },
+      {
+        clipPath: "inset(0% 0% 0% 100%)",
+        duration: 1,
       },
       "+=0.2"
     );
@@ -73,7 +71,7 @@ const Home = () => {
     tl.to(
       nameTextRef.current,
       {
-        y: "-35vh", // move up to top area
+        y: "-55vh", // move up to top area
         duration: 1,
         ease: "power2.inOut",
       },
@@ -103,13 +101,9 @@ const Home = () => {
     >
       <p
         ref={helloRef}
-        className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-5xl sm:text-7xl "
+        className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-5xl sm:text-7xl [clip-path: inset(0%_0%_0%_0%]"
       >
         Hello,
-        {/* <div
-          ref={helloVanishRef}
-          className="bg-white w-[110%] h-[120%] absolute top-0 -left-2 -skew-x-12"
-        ></div> */}
       </p>
 
       <p
@@ -124,7 +118,7 @@ const Home = () => {
 
       <div
         ref={finalRef}
-        className="font-integral-extra-bold text-4xl sm:text-7xl mt-6 text-center"
+        className="font-integral-extra-bold text-4xl sm:text-7xl  text-center"
       >
         <p>A FullStack </p>
         <p>Developer, Designer</p> <p> and an Artist</p>
