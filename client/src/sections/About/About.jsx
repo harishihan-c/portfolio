@@ -24,11 +24,14 @@ const About = () => {
   // });
 
   return (
-    <div ref={aboutContainerRef} className="h-screen">
+    <div
+      ref={aboutContainerRef}
+      className="h-screen bg-dark-olive relative pt-5 px-6"
+    >
       <div>
         <h1
           ref={aboutTextRef}
-          className="font-integral-extra-bold text-6xl sm:text-7xl mt-6 "
+          className="font-integral-extra-bold text-5xl sm:text-7xl "
         >
           Who{" "}
           <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block ">
@@ -38,27 +41,39 @@ const About = () => {
         </h1>
       </div>
 
-      <div>
-        <p>
-          I'm Harishihan Chandrakumar — a Full Stack Developer, Designer, and
-          Artist. I love turning ideas into interactive experiences, whether
-          it's building web apps with the MERN stack, designing clean and
-          user-friendly interfaces, or creating artwork that inspires. I enjoy
-          solving real problems with code, experimenting with new technologies,
-          and bringing creativity into every project I work on. I enjoy working
-          across diverse domains — building web applications, designing
-          intuitive interfaces, and expressing ideas through art
-        </p>
-        <div>
-          <img src="" alt="" />
-          <div>
-            <button>Download CV</button>
-            <button>Reach Me</button>
+      <div className="flex flex-col sm:flex-row w-full justify-center items-center">
+        <div className="w-full sm:w-[40%] p-6 text-white text-[15px] font-mono">
+          <p>
+            I'm Harishihan Chandrakumar — a Full Stack Developer, Designer, and
+            Artist.
+          </p>
+          <br />
+          <p>
+            {" "}
+            I love turning ideas into interactive experiences, whether it's
+            building web apps with the MERN stack, designing clean and
+            user-friendly interfaces, or creating artwork that inspires.
+          </p>{" "}
+          <br />
+          <p>
+            I enjoy solving real problems with code, experimenting with new
+            technologies, and bringing creativity into every project I work on.
+            I enjoy working across diverse domains — building web applications,
+            designing intuitive interfaces, and expressing ideas through art
+          </p>
+        </div>
+        <div className="w-full sm:w-[40%] flex flex-col justify-center items-center">
+          <img src={assets.me} alt="" className="w-80 -translate-y-4" />
+          <div className="w-full flex justify-center items-center">
+            <button className="w-48 py-2 bg-lime-primary">Download CV</button>
+            <button className="w-48 py-2 bg-black text-white ">
+              Reach Me
+            </button>
           </div>
         </div>
       </div>
 
-      <p>
+      <p className='font-mono mx-auto w-1/2 text-center text-lime-primary mt-10 capitalize'>
         [ development isn’t just about writing code — it’s about creating things
         that make an impact. ]
       </p>
