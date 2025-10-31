@@ -11,6 +11,7 @@
   --font-integral-demi-bold: integral-demi-bold, "sans-serif";
   --font-integral-extra-bold: integral-extra-bold, "sans-serif";
   --font-integral-heavy: integral-heavy, "sans-serif";
+  --color-lime-primary: #d7ff00;
 }
 
 body {
