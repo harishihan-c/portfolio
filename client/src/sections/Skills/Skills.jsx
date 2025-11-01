@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import StackNav from "../../components/StackNav";
 
 const Skills = () => {
   return (
-    <div className='h-screen'>Skills</div>
-  )
-}
+    <div className="h-screen">
+      <StackNav />
+    </div>
+  );
+};
 
-export default Skills
+export default Skills;
