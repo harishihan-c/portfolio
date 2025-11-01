@@ -53,7 +53,10 @@ const About = () => {
             scrollTrigger: {
               trigger: aboutContainerRef.current,
               scrub: true,
-              markers: true,
+              markers: {
+                startColor: "blue",
+                endColor: "yellow",
+              },
               start: "top bottom",
               end: "+=1000",
             },
@@ -65,7 +68,7 @@ const About = () => {
             {
               y: 0,
               x: 0,
-              scale: 0.6,
+              scale: 0.7,
               transformOrigin: "left top",
               autoAlpha: 1,
               duration: 1,
@@ -77,10 +80,10 @@ const About = () => {
             cardRef.current,
             { x: 1000, y: 150, autoAlpha: 0 },
             {
-              x: 100,
+              x: 0,
               y: 0,
               autoAlpha: 1,
-              duration: 0.8,
+              duration: 0.9,
             },
             "0.6"
           );
@@ -91,10 +94,13 @@ const About = () => {
           scrollTrigger: {
             trigger: aboutContainerRef.current,
             start: "top top",
-            end: "+=500",
+            end: "+=800",
             pin: true,
             scrub: true,
-            markers: true,
+            markers: {
+              startColor: "orange",
+              endColor: "teal",
+            },
           },
         });
 
@@ -109,21 +115,21 @@ const About = () => {
           "a"
         );
 
-        tl.to(
-          cardRef.current,
-          {
-            x: 0,
-            duration: 0.3,
-          },
-          "a"
-        );
+        // tl.to(
+        //   cardRef.current,
+        //   {
+        //     x: 0,
+        //     duration: 1.5,
+        //   },
+        //   "a"
+        // );
       }
     );
   });
   return (
     <div
       ref={aboutContainerRef}
-      className="h-screen bg-dark-olive relative py-8 px-6 xl:text-2xl"
+      className=" h-full sm:h-screen bg-dark-olive relative py-8 px-6 xl:text-2xl"
     >
       <div ref={wrapContainerRef}>
         <div ref={aboutTitleRef}>
