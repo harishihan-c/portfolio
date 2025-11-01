@@ -26,7 +26,6 @@ const About = () => {
         start: "top 20%",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
       },
     });
 
@@ -53,10 +52,6 @@ const About = () => {
             scrollTrigger: {
               trigger: aboutContainerRef.current,
               scrub: true,
-              markers: {
-                startColor: "blue",
-                endColor: "yellow",
-              },
               start: "top bottom",
               end: "+=1000",
             },
@@ -97,10 +92,6 @@ const About = () => {
             end: "+=800",
             pin: true,
             scrub: true,
-            markers: {
-              startColor: "orange",
-              endColor: "teal",
-            },
           },
         });
 
