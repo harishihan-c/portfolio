@@ -116,7 +116,7 @@ const Home = () => {
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center  h-full w-max-screen sm:h-screen relative perspective-distant bg-amber-400"
+      className=" flex flex-col justify-center  h-full w-max-screen sm:h-screen relative perspective-distant"
     >
       <div className="mx-auto sm:ml-14 sm:mr-0">
         <p
