@@ -129,11 +129,11 @@ const About = () => {
   return (
     <div
       ref={aboutContainerRef}
-      className=" h-full sm:h-screen bg-dark-olive relative py-8 px-6 xl:text-2xl"
+      className="h-full sm:h-screen bg-dark-olive relative py-8 px-6 xl:text-2xl"
     >
       <div ref={wrapContainerRef}>
         <div ref={aboutTitleRef}>
-          <h1 className="font-integral-extra-bold text-5xl sm:text-7xl ml-8 sm:ml-14 ">
+          <h1 className="font-integral-extra-bold text-[40px] sm:text-7xl ml-8 sm:ml-14 ">
             Who{" "}
             <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block ">
               AM I
@@ -146,7 +146,7 @@ const About = () => {
           ref={cardRef}
           className="flex flex-col md:flex-row w-full justify-center items-center"
         >
-          <div className="w-full md:w-[40%] p-6 text-white text-[16px] font-mono">
+          <div className="w-full md:w-[40%] p-6 text-white text-[12px] sm:text-[16px] font-mono">
             <p>
               I'm Harishihan Chandrakumar — a Full Stack Developer, Designer,
               and Artist.
