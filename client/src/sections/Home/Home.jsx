@@ -15,10 +15,8 @@ const Home = () => {
 
   const finalRef = useRef(null);
 
-  useGSAP((context) => {
+  useGSAP(() => {
     gsap.set(finalRef.current, { autoAlpha: 0, z: 1000, y: -200 });
-
-    gsap.config({ trialWarn: false });
 
     // For any screen size
     const introTl = gsap.timeline({});
@@ -36,7 +34,7 @@ const Home = () => {
       "<0.2"
     );
 
-    let mm = gsap.matchMedia(context);
+    let mm = gsap.matchMedia();
 
     mm.add(
       {
@@ -50,7 +48,7 @@ const Home = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: "+=2000",
+            end: isDesktop? "+=2000" : "+=1000",
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -84,7 +82,7 @@ const Home = () => {
         tl.to(
           nameTextRef.current,
           {
-            y: isMobile ? "-30vh" : "-40vh",
+            y: isMobile ? "-20vh" : "-40vh",
             duration: 0.6,
             ease: "power2.inOut",
           },
@@ -95,7 +93,7 @@ const Home = () => {
         tl.to(
           finalRef.current,
           {
-            y: isMobile ? -150 : -200,
+            y: isMobile ? -150 : -280,
             z: 0,
             autoAlpha: 1,
             duration: 0.7,
@@ -104,7 +102,7 @@ const Home = () => {
           "<0.1"
         );
 
-        tl.to({}, { duration: 0.1 });
+        // tl.to({}, { duration: 0.1 });
       }
     );
 
@@ -117,24 +115,26 @@ const Home = () => {
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center ml-14 h-screen relative perspective-distant"
+      className=" flex flex-col justify-center  h-[60vh] sm:h-screen relative perspective-distant"
     >
-      <p
-        ref={helloRef}
-        className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-5xl sm:text-7xl [clip-path: inset(0%_0%_0%_0%]"
-      >
-        Hello,
-      </p>
+      <div className="ml-8 sm:ml-14">
+        <p
+          ref={helloRef}
+          className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-5xl sm:text-7xl [clip-path: inset(0%_0%_0%_0%]"
+        >
+          Hello,
+        </p>
 
-      <p
-        ref={nameTextRef}
-        className="font-integral-extra-bold text-5xl sm:text-7xl mt-6 w-fit [clip-path:inset(0%_100%_0%_0%)]"
-      >
-        I'm{" "}
-        <span className=" bg-black text-[#D7FF00] px-5 pb-4  inline-block">
-          Harry,
-        </span>
-      </p>
+        <p
+          ref={nameTextRef}
+          className="font-integral-extra-bold text-5xl sm:text-7xl  mt-2 sm:mt-6 w-fit [clip-path:inset(0%_100%_0%_0%)]"
+        >
+          I'm{" "}
+          <span className=" bg-black text-[#D7FF00] px-5 pb-2 sm:pb-4  inline-block">
+            Harry,
+          </span>
+        </p>
+      </div>
 
       <div
         ref={finalRef}
