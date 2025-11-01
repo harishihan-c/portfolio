@@ -39,20 +39,21 @@ const Home = () => {
     mm.add(
       {
         isMobile: "(max-width:639px)",
-        isDesktop: "(min-width: 640px)",
+        isDesktop: "(min-width:640px)",
       },
       (context) => {
-        let { isMobile, isDesktop } = context.conditions;
+        let { isMobile, isTab, isDesktop, isWide } = context.conditions;
 
         let tl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: isDesktop? "+=2000" : "+=1000",
+            end: isDesktop ? "+=2000" : "+=1000",
             scrub: true,
             pin: true,
             pinSpacing: true,
-            markers: true,
+            anticipatePin: 1,
+            // markers: true,
           },
         });
 
@@ -93,10 +94,10 @@ const Home = () => {
         tl.to(
           finalRef.current,
           {
-            y: isMobile ? -150 : -280,
+            y: isMobile ? -100 : -230,
             z: 0,
             autoAlpha: 1,
-            duration: 0.7,
+            duration: 0.8,
             ease: "power1.inOut",
           },
           "<0.1"
@@ -115,19 +116,19 @@ const Home = () => {
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center  h-[60vh] sm:h-screen relative perspective-distant"
+      className=" flex flex-col justify-center  h-full w-max-screen sm:h-screen relative perspective-distant bg-amber-400"
     >
-      <div className="ml-8 sm:ml-14">
+      <div className="mx-auto sm:ml-14 sm:mr-0">
         <p
           ref={helloRef}
-          className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-5xl sm:text-7xl [clip-path: inset(0%_0%_0%_0%]"
+          className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-[40px] sm:text-7xl [clip-path: inset(0%_0%_0%_0%]"
         >
           Hello,
         </p>
 
         <p
           ref={nameTextRef}
-          className="font-integral-extra-bold text-5xl sm:text-7xl  mt-2 sm:mt-6 w-fit [clip-path:inset(0%_100%_0%_0%)]"
+          className="font-integral-extra-bold text-[40px] sm:text-7xl  mt-2 sm:mt-6 w-fit [clip-path:inset(0%_100%_0%_0%)]"
         >
           I'm{" "}
           <span className=" bg-black text-[#D7FF00] px-5 pb-2 sm:pb-4  inline-block">
@@ -138,7 +139,7 @@ const Home = () => {
 
       <div
         ref={finalRef}
-        className="font-integral-extra-bold text-4xl sm:text-7xl  text-center"
+        className="font-integral-extra-bold text-3xl px-6 sm:text-7xl sm:px-0  text-center"
       >
         <p>A FullStack </p>
         <p>Developer, Designer</p> <p> and an Artist</p>
