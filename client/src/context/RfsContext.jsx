@@ -2,7 +2,7 @@ import { createContext, useContext, useRef } from "react";
 
 export const RfsContext = createContext();
 
-export const RfsProvider = () => {
+export const RfsProvider = ({ children }) => {
   const mainContainer = useRef(null);
   const cssRef = useRef(null);
   const expressRef = useRef(null);
