@@ -22,6 +22,7 @@ export const RfsProvider = ({ children }) => {
   const viteRef = useRef(null);
   const vscodeRef = useRef(null);
   const webstromRef = useRef(null);
+  const reactRef = useRef(null);
 
   return (
     <RfsContext.Provider
@@ -45,6 +46,7 @@ export const RfsProvider = ({ children }) => {
         viteRef,
         vscodeRef,
         webstromRef,
+        reactRef,
       }}
     >
       {children}
