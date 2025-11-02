@@ -30,11 +30,12 @@ const All = () => {
     vscodeRef,
     webstromRef,
     reactRef,
+    titleRef
   } = useRefs();
 
   return (
     <div ref={mainContainer} className="relative w-full h-full">
-      <div className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl  w-[70%] mx-auto text-center mb-10">
+      <div ref={titleRef} className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl  w-[70%] mx-auto text-center mb-10">
         The{" "}
         <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block ">
           Stack

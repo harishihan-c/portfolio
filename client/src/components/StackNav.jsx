@@ -33,6 +33,7 @@ const StackNav = () => {
     viteRef,
     vscodeRef,
     webstromRef,
+    titleRef,
   } = useRefs();
 
   const [active, setActive] = useState("all");
@@ -45,11 +46,13 @@ const StackNav = () => {
 
   //Main Component useRefs,
   const skillsContainer = useRef(null);
+  const navRef = useRef(null);
 
   // <<<<<<<-------------Animations---------------------------->>>>>>>>>>>>
   useGSAP(() => {
     //Initial set values
-    gsap.set(cssRef.current, { y: -300, x: 50 });
+    gsap.set(navRef.current, { autoAlpha: 0 });
+    gsap.set(titleRef.current, { autoAlpha: 0, z: -2000 });
 
     let mm = gsap.matchMedia();
 
@@ -64,20 +67,32 @@ const StackNav = () => {
         let tl = gsap.timeline({
           scrollTrigger: {
             trigger: skillsContainer.current,
-            start: "top top",
+            start: "top 70%",
             end: "+=1000",
             scrub: true,
-            pin: true,
+            // pin: true,
             markers: true,
           },
+        });
+
+        tl.to(titleRef.current, {
+          autoAlpha: 1,
+          z: 0,
+          duration: 0.9,
         });
       }
     );
   });
 
   return (
-    <div ref={skillsContainer} className="min-h-screen flex flex-col ">
-      <nav className="flex items-center justify-center gap-8 h-[30%] w-full">
+    <div
+      ref={skillsContainer}
+      className="h-screen flex flex-col perspective-distant "
+    >
+      <nav
+        ref={navRef}
+        className="flex items-center justify-center gap-8 h-[30%] w-full"
+      >
         <button
           onClick={() => handleOnClick(0)}
           className={`${
