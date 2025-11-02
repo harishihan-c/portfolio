@@ -64,20 +64,37 @@ const StackNav = () => {
       (context) => {
         let { isMobile, isDesktop } = context.conditions;
 
-        let tl = gsap.timeline({
+        //pre Animation
+        let preTl = gsap.timeline({
           scrollTrigger: {
             trigger: skillsContainer.current,
             start: "top 70%",
-            end: "+=1000",
+            end: "bottom bottom",
             scrub: true,
-            // pin: true,
             markers: true,
           },
         });
 
-        tl.to(titleRef.current, {
+        preTl.to(titleRef.current, {
           autoAlpha: 1,
           z: 0,
+          duration: 0.9,
+        });
+
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: skillsContainer.current,
+            start: "top top",
+            end: "+=1000",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+            markers: true,
+          },
+        });
+
+        tl.to(navRef.current, {
+          autoAlpha: 1,
           duration: 0.9,
         });
       }
