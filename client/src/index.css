@@ -27,12 +27,12 @@ body {
 
 @media (min-width: 640px) {
   .icon {
-    width: 6.5%;
+    width: 6%;
   }
 }
 
 @media (min-width: 1024px) {
   .icon {
-    width: 5%;
+    width: 4.5%;
   }
 }
