@@ -1,5 +1,5 @@
 import React from "react";
-import StackNav from "../../components/StackNav";
+import StackNav from "../components/StackNav";
 
 const Skills = () => {
   return (

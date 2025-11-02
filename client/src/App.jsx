@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import NavBar from "./components/NavBar";
-import Home from "./sections/Home/Home";
-import About from "./sections/About/About";
-import Skills from "./sections/Skills/Skills";
-import Projects from "./sections/Projects/Projects";
-import Contact from "./sections/Contact/Contact";
+import Home from "./sections/Home";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
