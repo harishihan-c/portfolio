@@ -4,7 +4,7 @@ import StackNav from "../components/StackNav";
 const Skills = () => {
   return (
     <div className="h-screen">
-      <StackNav />
+      <StackNav /> 
     </div>
   );
 };
