@@ -19,3 +19,20 @@ body {
   font-family: "poppins", sans-serif;
   overflow-x: hidden;
 }
+
+.icon {
+  position: absolute;
+  width: 8%;
+}
+
+@media (min-width: 640px) {
+  .icon {
+    width: 6.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .icon {
+    width: 5%;
+  }
+}
