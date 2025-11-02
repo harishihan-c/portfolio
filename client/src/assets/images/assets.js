@@ -17,6 +17,7 @@ import tailwind from "./TailwindCSS-Dark.svg";
 import vite from "./Vite-Dark.svg";
 import vscode from "./VSCode-Dark.svg";
 import webstrom from "./WebStorm-Dark.svg";
+import react from "./React-Dark.svg"
 
 export const assets = {
   me,
@@ -38,4 +39,5 @@ export const assets = {
   express,
   mysql,
   node,
+  react
 };
