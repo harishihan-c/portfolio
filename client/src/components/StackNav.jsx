@@ -34,7 +34,34 @@ const StackNav = () => {
     vscodeRef,
     webstromRef,
     titleRef,
+    reactRef,
   } = useRefs();
+
+  //aRAY
+  const iconArrayLeft = [
+    cssRef,
+    expressRef,
+    figmaRef,
+    fireRef,
+    tailwindRef,
+    githubRef,
+    ideaRef,
+    reactRef,
+  ];
+
+  const iconArrayRight = [
+    gitRef,
+    htmlRef,
+    javaRef,
+    jsRef,
+    mongoRef,
+    sqlRef,
+    nodeRef,
+    postmanRef,
+    viteRef,
+    vscodeRef,
+    webstromRef,
+  ];
 
   const [active, setActive] = useState("all");
 
@@ -52,7 +79,55 @@ const StackNav = () => {
   useGSAP(() => {
     //Initial set values
     gsap.set(navRef.current, { autoAlpha: 0 });
-    gsap.set(titleRef.current, { autoAlpha: 0, z: -2000 });
+    gsap.set(titleRef.current, { autoAlpha: 0, z: -1000 });
+
+    // let icTl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: skillsContainer.current,
+    //     start: "top 20%",
+    //     // end: "+=1500",
+    //     toggleActions: "play pause resume pause",
+    //     scrub: true
+    //   },
+    // });
+
+    // iconArrayLeft.forEach((ref) => {
+    //   icTl.fromTo(
+    //     ref.current,
+    //     {
+    //       y: -25,
+    //       rotate: -5,
+    //       duration: 0.9,
+    //     },
+    //     {
+    //       y: 10,
+    //       rotate: 0,
+    //       // repeat: -1,
+    //       yoyo: true,
+    //       ease: "power3.inOut",
+    //       duration: 0.9,
+    //     },"a"
+    //   );
+    // });
+
+    // iconArrayRight.forEach((ref) => {
+    //   icTl.fromTo(
+    //     ref.current,
+    //     {
+    //       y: -25,
+    //       rotate: 10,
+    //       duration: 0.9,
+    //     },
+    //     {
+    //       y: 10,
+    //       rotate: 0,
+    //       // repeat: -1,
+    //       yoyo: true,
+    //       ease: "power3.inOut",
+    //       duration: 0.9,
+    //     },"a"
+    //   );
+    // });
 
     let mm = gsap.matchMedia();
 
@@ -68,7 +143,7 @@ const StackNav = () => {
         let preTl = gsap.timeline({
           scrollTrigger: {
             trigger: skillsContainer.current,
-            start: "top 70%",
+            start: "top 90%",
             end: "bottom bottom",
             scrub: true,
             markers: true,
@@ -78,8 +153,9 @@ const StackNav = () => {
         preTl.to(titleRef.current, {
           autoAlpha: 1,
           z: 0,
-          duration: 0.9,
-        });
+          duration: 10,
+          ease: "power1.inOut",
+        }, "<0.2");
 
         let tl = gsap.timeline({
           scrollTrigger: {
@@ -88,14 +164,54 @@ const StackNav = () => {
             end: "+=1000",
             scrub: true,
             pin: true,
-            pinSpacing: false,
+            pinSpacing: true,
             markers: true,
           },
         });
 
         tl.to(navRef.current, {
           autoAlpha: 1,
-          duration: 0.9,
+          duration: 0.2,
+        }, "a");
+
+        iconArrayLeft.forEach((ref) => {
+          tl.fromTo(
+            ref.current,
+            {
+              y: -25,
+              rotate: -5,
+              // duration: 0.9,
+            },
+            {
+              y: 10,
+              rotate: 0,
+              // repeat: -1,
+              yoyo: true,
+              ease: "power3.inOut",
+              duration: 0.9,
+            },
+            "a"
+          );
+        });
+
+        iconArrayRight.forEach((ref) => {
+          tl.fromTo(
+            ref.current,
+            {
+              y: -25,
+              rotate: 10,
+              // duration: 0.9,
+            },
+            {
+              y: 10,
+              rotate: 0,
+              // repeat: -1,
+              yoyo: true,
+              ease: "power3.inOut",
+              duration: 0.9,
+            },
+            "a"
+          );
         });
       }
     );
@@ -104,7 +220,7 @@ const StackNav = () => {
   return (
     <div
       ref={skillsContainer}
-      className="h-screen flex flex-col perspective-distant "
+      className="h-screen w-screen flex flex-col relative perspective-distant "
     >
       <nav
         ref={navRef}
