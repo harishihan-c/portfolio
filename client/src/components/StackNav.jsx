@@ -194,7 +194,7 @@ const StackNav = () => {
               y: 10,
               rotate: 0,
               // repeat: -1,
-              yoyo: true,
+              // yoyo: true,
               ease: "power3.inOut",
               duration: 0.9,
             },
