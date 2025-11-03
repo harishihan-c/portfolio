@@ -73,10 +73,42 @@ const About = () => {
 
           initTl.fromTo(
             cardRef.current,
-            { x: 1000, y: 150, autoAlpha: 0 },
+            { x: 1000, autoAlpha: 0 },
             {
               x: 0,
+              autoAlpha: 1,
+              duration: 0.9,
+            },
+            "0.6"
+          );
+        } else {
+          let initTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: aboutContainerRef.current,
+              scrub: true,
+              start: "top bottom",
+              end: "+=1000",
+            },
+          });
+          initTl.fromTo(
+            aboutTitleRef.current,
+            { x: 800, y: 150, autoAlpha: 0 },
+            {
               y: 0,
+              x: 0,
+              scale: 0.7,
+              transformOrigin: "left top",
+              autoAlpha: 1,
+              duration: 1,
+              // ease: "power4.inOut",
+            }
+          );
+
+           initTl.fromTo(
+            cardRef.current,
+            { x: 1000, autoAlpha: 0 },
+            {
+              x: 0,
               autoAlpha: 1,
               duration: 0.9,
             },
@@ -135,9 +167,9 @@ const About = () => {
 
         <div
           ref={cardRef}
-          className="flex flex-col md:flex-row w-full justify-center items-center"
+          className="flex flex-col lg:flex-row w-full justify-center items-center"
         >
-          <div className="w-full md:w-[40%] p-6 text-white text-[12px] sm:text-[16px] font-mono">
+          <div className="w-full md:w-[80%] p-6 text-white text-[14px] sm:text-[16px] md:text-[20px] font-mono">
             <p>
               I'm Harishihan Chandrakumar — a Full Stack Developer, Designer,
               and Artist.
@@ -158,11 +190,17 @@ const About = () => {
               through art
             </p>
           </div>
-          <div className="w-full sm:w-[40%] flex flex-col justify-center items-center">
-            <img src={assets.me} alt="" className="w-80 -translate-y-4" />
-            <div className="w-full flex justify-center items-center">
-              <button className="w-48 py-2 bg-lime-primary">Download CV</button>
-              <button className="w-48 py-2 bg-black text-white ">
+          <div className="w-full md:w-[90%] flex flex-col justify-center items-center md:mt-20">
+            <img
+              src={assets.me}
+              alt=""
+              className="w-72 md:w-96 -translate-y-4"
+            />
+            <div className="w-full flex justify-center items-center text-[13px] sm:text-[16px] px-6">
+              <button className="w-48 py-2 bg-lime-primary md:min-w-56">
+                Download CV
+              </button>
+              <button className="w-48 py-2 bg-black text-white md:w-56 ">
                 Reach Me
               </button>
             </div>
