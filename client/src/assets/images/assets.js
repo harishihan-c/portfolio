@@ -21,7 +21,7 @@ import react from "./React-Dark.svg"
 
 export const assets = {
   me,
-  "css":css,
+  "css 3":css,
   "figma":figma,
   "firebase" :firebase,
   "git":git,
@@ -32,7 +32,7 @@ export const assets = {
   "javaScript":javaScript,
   "mongodb":mongodb,
   "postman":postman,
-  "tailwind css " :tailwindcss,
+  "tailwind css" :tailwindcss,
   "vite":vite,
   "vscode":vscode,
   "webstrom":webstrom,
