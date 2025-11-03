@@ -104,7 +104,7 @@ const About = () => {
             }
           );
 
-           initTl.fromTo(
+          initTl.fromTo(
             cardRef.current,
             { x: 1000, autoAlpha: 0 },
             {
@@ -167,7 +167,7 @@ const About = () => {
 
         <div
           ref={cardRef}
-          className="flex flex-col  custom-lg:flex-row w-full justify-center items-center"
+          className="flex flex-col custom-lg:flex-row w-full justify-center items-center"
         >
           <div className="w-full md:w-[80%] p-6 text-white text-[14px] sm:text-[16px] md:text-[25px] custom-lg:text-[18px] font-mono">
             <p>
