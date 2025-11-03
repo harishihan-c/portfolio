@@ -150,12 +150,16 @@ const StackNav = () => {
           },
         });
 
-        preTl.to(titleRef.current, {
-          autoAlpha: 1,
-          z: 0,
-          duration: 10,
-          ease: "power1.inOut",
-        }, "<0.2");
+        preTl.to(
+          titleRef.current,
+          {
+            autoAlpha: 1,
+            z: 0,
+            duration: 10,
+            ease: "power1.inOut",
+          },
+          "<0.2"
+        );
 
         let tl = gsap.timeline({
           scrollTrigger: {
@@ -169,10 +173,14 @@ const StackNav = () => {
           },
         });
 
-        tl.to(navRef.current, {
-          autoAlpha: 1,
-          duration: 0.2,
-        }, "a");
+        tl.to(
+          navRef.current,
+          {
+            autoAlpha: 1,
+            duration: 0.2,
+          },
+          "a"
+        );
 
         iconArrayLeft.forEach((ref) => {
           tl.fromTo(
@@ -220,7 +228,7 @@ const StackNav = () => {
   return (
     <div
       ref={skillsContainer}
-      className="h-screen w-screen flex flex-col relative perspective-distant "
+      className="min-h-screen w-screen flex flex-col relative perspective-distant "
     >
       <nav
         ref={navRef}
