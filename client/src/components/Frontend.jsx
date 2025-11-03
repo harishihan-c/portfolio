@@ -3,11 +3,11 @@ import { assets } from "../assets/images/assets.js";
 
 const Frontend = () => {
   const frontendArray = [
-    "css 3",
     "html 5",
-    "javaScript",
-    "tailwind css",
+    "javascript",
+    "css 3",
     "react",
+    "tailwind css",
   ];
 
   return (

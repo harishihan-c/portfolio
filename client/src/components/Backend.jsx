@@ -2,7 +2,7 @@ import React from "react";
 import { assets } from "../assets/images/assets";
 
 const Backend = () => {
-  const backendArray = ["node", "express", "mongodb", "firebase", "mysql"];
+  const backendArray = ["node js", "firebase",  "express js", "mysql","mongo db",];
   return (
     <div className="w-[70%]  grid grid-cols-1 lg:grid-cols-2  gap-y-8  gap-10 mx-auto ">
       {backendArray.map((id) => (

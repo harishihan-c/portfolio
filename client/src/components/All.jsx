@@ -36,11 +36,11 @@ const All = () => {
   return (
     <div
       ref={mainContainer}
-      className="relative w-full h-full perspective-distant"
+      className="relative w-full h-full perspective-distant "
     >
       <div
         ref={titleRef}
-        className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl  w-[70%] mx-auto text-center mb-10"
+        className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl w-[60%]  sm:w-[70%]  mx-auto text-center mb-10"
       >
         The{" "}
         <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block ">
@@ -57,13 +57,13 @@ const All = () => {
         />
         <img
           ref={webstromRef}
-          src={assets.webstrom}
+          src={assets["web strom"]}
           alt=""
           className="icon top-[55%] left-[6%] scale-105"
         />
         <img
           ref={tailwindRef}
-          src={assets.tailwind}
+          src={assets["tailwind css"]}
           alt=""
           className="icon bottom-[-50%] left-[8%]"
         />
@@ -76,7 +76,7 @@ const All = () => {
         />
         <img
           ref={nodeRef}
-          src={assets.node}
+          src={assets["node js"]}
           alt=""
           className="icon top-[170%] left-[16%]"
         />
@@ -88,19 +88,19 @@ const All = () => {
         />
         <img
           ref={mongoRef}
-          src={assets.mongodb}
+          src={assets["mongo db"]}
           alt=""
           className="icon top-[120%] left-[40%]"
         />
         <img
           ref={vscodeRef}
-          src={assets.vscode}
+          src={assets["vs code"]}
           alt=""
           className="icon top-[130%] left-[54%]"
         />
         <img
           ref={jsRef}
-          src={assets.js}
+          src={assets.javascript}
           alt=""
           className="icon top-[170%] left-[46%]"
         />
@@ -112,25 +112,25 @@ const All = () => {
         />
         <img
           ref={ideaRef}
-          src={assets.idea}
+          src={assets["intellij idea"]}
           alt=""
           className="icon top-[170%] left-[61%]"
         />
         <img
           ref={cssRef}
-          src={assets.css}
+          src={assets["css 3"]}
           alt=""
           className="icon top-[110%] left-[75%]"
         />
         <img
           ref={htmlRef}
-          src={assets.html}
+          src={assets["html 5"]}
           alt=""
           className="icon top-[153%] left-[71%]"
         />
         <img
           ref={githubRef}
-          src={assets.github}
+          src={assets["git hub"]}
           alt=""
           className="icon top-[168%] left-[81%]"
         />
@@ -144,11 +144,11 @@ const All = () => {
           ref={sqlRef}
           src={assets.mysql}
           alt=""
-          className="icon top-[60%] left-[90%]"
+          className="icon top-[60%] right-[5%]"
         />
         <img
           ref={expressRef}
-          src={assets.express}
+          src={assets["express js"]}
           alt=""
           className="icon top-[10%] left-[79%]"
         />

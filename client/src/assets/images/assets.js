@@ -8,7 +8,7 @@ import github from "./Github-Dark.svg";
 import html5 from "./HTML.svg";
 import idea from "./Idea-Dark.svg";
 import java from "./Java-Dark.svg";
-import javaScript from "./JavaScript.svg";
+import javascript from "./JavaScript.svg";
 import mongodb from "./MongoDB.svg";
 import mysql from "./MySQL-Dark.svg";
 import node from "./NodeJS-Dark.svg";
@@ -25,19 +25,19 @@ export const assets = {
   "figma":figma,
   "firebase" :firebase,
   "git":git,
-  "github":github,
+  "git hub":github,
   "html 5" : html5,
   "java":java,
-  "idea":idea,
-  "javaScript":javaScript,
-  "mongodb":mongodb,
+  "intellij idea":idea,
+  "javascript":javascript,
+  "mongo db":mongodb,
   "postman":postman,
   "tailwind css" :tailwindcss,
   "vite":vite,
-  "vscode":vscode,
-  "webstrom":webstrom,
-  "express":express,
+  "vs code":vscode,
+  "web strom":webstrom,
+  "express js":express,
   "mysql":mysql,
-  "node":node,
+  "node js":node,
   "react":react
 };
