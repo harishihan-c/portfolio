@@ -165,7 +165,7 @@ const StackNav = () => {
           scrollTrigger: {
             trigger: skillsContainer.current,
             start: "top top",
-            end: "+=1000",
+            end: isDesktop? "+=2000": "+=3000",
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -177,7 +177,7 @@ const StackNav = () => {
           navRef.current,
           {
             autoAlpha: 1,
-            duration: 0.2,
+            duration: 0.7,
           },
           "a"
         );
@@ -196,7 +196,7 @@ const StackNav = () => {
               // repeat: -1,
               // yoyo: true,
               ease: "power3.inOut",
-              duration: 0.9,
+              duration: isMobile?0.4 : 0.9,
             },
             "a"
           );
@@ -216,7 +216,7 @@ const StackNav = () => {
               // repeat: -1,
               yoyo: true,
               ease: "power3.inOut",
-              duration: 0.9,
+              duration: isMobile?0.4 : 0.9,
             },
             "a"
           );
