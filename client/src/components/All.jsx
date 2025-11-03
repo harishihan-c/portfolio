@@ -34,7 +34,10 @@ const All = () => {
   } = useRefs();
 
   return (
-    <div ref={mainContainer} className="relative w-full h-full perspective-distant">
+    <div
+      ref={mainContainer}
+      className="relative w-full h-full perspective-distant"
+    >
       <div
         ref={titleRef}
         className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl  w-[70%] mx-auto text-center mb-10"
@@ -66,8 +69,8 @@ const All = () => {
         />
 
         <img
-          ref={reactRef}
-          src={assets.react}
+          ref={postmanRef}
+          src={assets.postman}
           alt=""
           className="icon top-[110%] left-[23%]"
         />
@@ -149,8 +152,18 @@ const All = () => {
           alt=""
           className="icon top-[10%] left-[79%]"
         />
-        {/* <img ref={postmanRef} src={assets.postman} alt="" /> */}
-        {/* <img ref={viteRef} src={assets.vite} alt="" /> */}
+        <img
+          ref={reactRef}
+          src={assets.react}
+          alt=""
+          className="icon top-[-45%] left-[5%]"
+        />
+        <img
+          ref={viteRef}
+          src={assets.vite}
+          alt=""
+          className="icon top-[-35%] right-[9%]"
+        />
       </div>
     </div>
   );
