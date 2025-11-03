@@ -169,7 +169,7 @@ const About = () => {
           ref={cardRef}
           className="flex flex-col lg:flex-row w-full justify-center items-center"
         >
-          <div className="w-full md:w-[80%] p-6 text-white text-[14px] sm:text-[16px] md:text-[20px] font-mono">
+          <div className="w-full md:w-[80%] p-6 text-white text-[14px] sm:text-[16px] md:text-[20px] lg:text-[18px] font-mono">
             <p>
               I'm Harishihan Chandrakumar — a Full Stack Developer, Designer,
               and Artist.
