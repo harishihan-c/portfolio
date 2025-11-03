@@ -75,7 +75,7 @@ const Home = () => {
           {
             scale: 0.45,
             transformOrigin: "left top",
-            duration: 0.5,
+            duration: 0.9,
           },
           "a"
         );
@@ -83,9 +83,9 @@ const Home = () => {
         tl.to(
           nameTextRef.current,
           {
-            y: isMobile ? "-20vh" : "-40vh",
-            duration: 0.6,
-            ease: "power2.inOut",
+            y: isMobile ? "-35vh" : "-40vh",
+            duration: 0.5,
+            ease: "power1.inOut",
           },
           "a"
         );
@@ -118,7 +118,7 @@ const Home = () => {
       ref={containerRef}
       className=" flex flex-col justify-center  h-full w-max-screen sm:h-screen relative perspective-distant"
     >
-      <div className="mx-auto sm:ml-14 sm:mr-0">
+      <div className="mx-auto sm:ml-14 sm:mr-0 relative top-1/2 sm:top-0 ">
         <p
           ref={helloRef}
           className="relative w-fit mt-40 sm:mt-80 font-integral-extra-bold text-[40px] sm:text-7xl [clip-path: inset(0%_0%_0%_0%]"
