@@ -81,54 +81,6 @@ const StackNav = () => {
     gsap.set(navRef.current, { autoAlpha: 0 });
     gsap.set(titleRef.current, { autoAlpha: 0, z: -1000 });
 
-    // let icTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: skillsContainer.current,
-    //     start: "top 20%",
-    //     // end: "+=1500",
-    //     toggleActions: "play pause resume pause",
-    //     scrub: true
-    //   },
-    // });
-
-    // iconArrayLeft.forEach((ref) => {
-    //   icTl.fromTo(
-    //     ref.current,
-    //     {
-    //       y: -25,
-    //       rotate: -5,
-    //       duration: 0.9,
-    //     },
-    //     {
-    //       y: 10,
-    //       rotate: 0,
-    //       // repeat: -1,
-    //       yoyo: true,
-    //       ease: "power3.inOut",
-    //       duration: 0.9,
-    //     },"a"
-    //   );
-    // });
-
-    // iconArrayRight.forEach((ref) => {
-    //   icTl.fromTo(
-    //     ref.current,
-    //     {
-    //       y: -25,
-    //       rotate: 10,
-    //       duration: 0.9,
-    //     },
-    //     {
-    //       y: 10,
-    //       rotate: 0,
-    //       // repeat: -1,
-    //       yoyo: true,
-    //       ease: "power3.inOut",
-    //       duration: 0.9,
-    //     },"a"
-    //   );
-    // });
-
     let mm = gsap.matchMedia();
 
     mm.add(
@@ -147,6 +99,7 @@ const StackNav = () => {
             end: "bottom bottom",
             scrub: true,
             markers: true,
+            anticipatePin: 1
           },
         });
 
