@@ -25,7 +25,7 @@ const StackNav = () => {
   return (
     <div
       ref={skillsContainerRef}
-      className="h-screen w-screen flex flex-col relative perspective-distant bg-amber-300"
+      className="h-screen w-screen flex flex-col relative perspective-distant"
     >
       <nav
         ref={navRef}
