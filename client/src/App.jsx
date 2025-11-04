@@ -40,6 +40,7 @@ const App = () => {
     navRef,
     skillsContainerRef,
     wrapperRef,
+    projectContainerRef,
   } = useRefs();
 
   //aRAY
@@ -106,7 +107,7 @@ const App = () => {
         //  pre Animation
         let preTl = gsap.timeline({
           scrollTrigger: {
-            trigger: wrapperRef.current,
+            trigger: skillsContainerRef.current,
             start: "top 90%",
             end: "bottom bottom",
             scrub: true,
@@ -130,12 +131,11 @@ const App = () => {
           scrollTrigger: {
             trigger: wrapperRef.current,
             start: "top top",
-            end: "+=200%",
+            end: "+=300%",
             pin: true,
             scrub: true,
           },
         });
-
 
         iconArrayRight.forEach((ref) => {
           masterTl.fromTo(
@@ -143,16 +143,18 @@ const App = () => {
             {
               x: 200,
               y: 400,
-              rotate: 40,
+              rotate: 90,
+              autoAlpha: 0,
             },
             {
+              autoAlpha: 1,
               x: 0,
               y: 0,
-              rotate: 0,
+              rotate: -360,
               ease: "power3.inOut",
               duration: isMobile ? 0.4 : 0.7,
             },
-            "a"
+            "<"
           );
         });
 
@@ -169,19 +171,53 @@ const App = () => {
               autoAlpha: 1,
               x: 0,
               y: 0,
-              rotate: 80,
+              rotate: 360,
               ease: "power3.inOut",
               duration: isMobile ? 0.4 : 0.7,
             },
-            "a"
+            "<"
           );
+        });
+
+        iconArrayBottom.forEach((ref) => {
+          masterTl.fromTo(
+            ref.current,
+            {
+              y: 400,
+              rotate: -90,
+              autoAlpha: 0,
+            },
+            {
+              autoAlpha: 1,
+              x: 0,
+              y: 0,
+              rotate: 360,
+              ease: "power3.inOut",
+              duration: isMobile ? 0.4 : 0.7,
+            },
+            "<"
+          );
+        });
+
+        masterTl.to(
+          navRef.current,
+          {
+            autoAlpha: 1,
+            duration: 0.4,
+          },
+          "<0.2"
+        );
+
+        masterTl.to(projectContainerRef.current, {
+          yPercent: -100,
+          duration: 0.7,
         });
       }
     );
   });
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <NavBar />
       <section id="home">
         <Home />
@@ -190,11 +226,15 @@ const App = () => {
         <About />
       </section>
       <div ref={wrapperRef} id="wrapper">
-        <section id="skills">
+        <section id="skills" >
           <Skills />
         </section>
-        <section id="projects">
-          <Projects />
+        <section
+          ref={projectContainerRef}
+          id="projects"
+          className="absolute w-full "
+        >
+          <Projects className="h-screen" />
         </section>
       </div>
       <section id="contact">
