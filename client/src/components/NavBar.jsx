@@ -1,3 +1,4 @@
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
@@ -8,24 +9,19 @@ const NavBar = () => {
   useEffect(() => {
     const sectionArray = ["home", "about", "skills", "projects", "contact"];
 
-    const handleScroll = () => {
-      sectionArray.forEach((id) => {
-        const section = document.getElementById(id);
+    const triggers = sectionArray.map((id) => {
+      const section = document.getElementById(id);
 
-        if (section) {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
+      if (!section) return null;
 
-          if (
-            window.scrollY >= top - height / 2 &&
-            window.scrollY < top + height / 2
-          ) {
-            setActiveSection(id);
-          }
-        }
+      return ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActiveSection(id),
+        onEnterBack: () => setActiveSection(id),
       });
-    };
-    window.addEventListener("scroll", handleScroll);
+    });
 
     //Show when scroll up
     let lastScroll = window.scrollY;
@@ -44,7 +40,9 @@ const NavBar = () => {
 
     window.addEventListener("scroll", handleNavVisible);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      triggers.forEach((t) => t && t.kill());
+    };
   }, []);
   return (
     <div
@@ -103,7 +101,7 @@ const NavBar = () => {
         onClick={() => setActiveSection("contact")}
         className={`${
           activeSection === "contact"
-            ?"line-through decoration-lime-primary decoration-4 "
+            ? "line-through decoration-lime-primary decoration-4 "
             : ""
         } w-28 px-2 py-2`}
         href="#contact"
