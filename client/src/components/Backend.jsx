@@ -6,7 +6,7 @@ const Backend = () => {
   return (
     <div className="w-[70%]  grid grid-cols-1 lg:grid-cols-2  gap-y-8  gap-10 mx-auto ">
       {backendArray.map((id) => (
-        <div className="h-14 sm:h-16 relative flex ">
+        <div key={id} className="h-14 sm:h-16 relative flex ">
           <div className="w-4 bg-lime-primary"></div>
           <img src={assets[id]} alt="" className="ml-3 w-11 sm:w-13 mr-8" />
           <div
