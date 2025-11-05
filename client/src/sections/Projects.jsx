@@ -16,8 +16,8 @@ const Projects = () => {
   const [active ,setActive] = useState("Projects")
 
   return (
-    <div className="h-screen bg-[#E6E6E6]">
-      <div className="flex justify-evenly items-center py-8 font-integral-regular text-[20px] ">
+    <div className="h-screen bg-[#E6E6E6] px-10">
+      <div className="flex justify-between items-center py-8 font-integral-regular text-[20px] ">
         {navArray.map((id) => (
           <button key={id} onClick={() => setActive(id)}>{id}</button>
         ))}
