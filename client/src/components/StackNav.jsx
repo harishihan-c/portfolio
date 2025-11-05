@@ -6,13 +6,8 @@ import Languages from "./Languages";
 import Tools from "./Tools";
 import { useRefs } from "../context/RfsContext";
 
-
 const StackNav = () => {
-  const {
-    skillsContainerRef,
-    navRef,
-  } = useRefs();
-
+  const { skillsContainerRef, navRef } = useRefs();
 
   const [active, setActive] = useState("All");
 
@@ -21,11 +16,11 @@ const StackNav = () => {
   const handleOnClick = (index) => {
     setActive(() => nameArray[index]);
   };
-  
+
   return (
     <div
       ref={skillsContainerRef}
-      className="h-screen w-screen flex flex-col relative perspective-distant"
+      className="h-screen w-screen flex flex-col relative perspective-distant overflow-hidden"
     >
       <nav
         ref={navRef}
@@ -45,19 +40,14 @@ const StackNav = () => {
       </nav>
 
       <div>
-        {active === "All" && <All />}
-        {active === "Frontend" && <Frontend />}
-        {active === "Backend" && <Backend />}
-        {active === "Languages" && <Languages />}
-        {active === "Tools" && <Tools />}
+        {active === "All" && <All key={"all"} />}
+        {active === "Frontend" && <Frontend key={"frontend"} />}
+        {active === "Backend" && <Backend key={"backend"} />}
+        {active === "Languages" && <Languages key={"language"} />}
+        {active === "Tools" && <Tools key={"tools"} />}
       </div>
     </div>
   );
 };
 
 export default StackNav;
-
-
-      
-       
-        
