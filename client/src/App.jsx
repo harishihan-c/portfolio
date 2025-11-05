@@ -113,6 +113,7 @@ const App = () => {
             scrub: true,
             markers: true,
             anticipatePin: 1.5,
+            toggleActions: "play pause play pause",
           },
         });
 
@@ -131,7 +132,7 @@ const App = () => {
           scrollTrigger: {
             trigger: wrapperRef.current,
             start: "top top",
-            end: "+=300%",
+            end: "+=400%",
             pin: true,
             scrub: true,
           },
@@ -208,16 +209,27 @@ const App = () => {
           "<0.2"
         );
 
+        masterTl.to(skillsContainerRef.current, {
+          scale: 0.9,
+          duration: 0.5
+        }, "b")
+
         masterTl.to(projectContainerRef.current, {
           yPercent: -100,
           duration: 0.7,
-        });
+        }, "b");
+
+        return () => {
+          preTl.kill();
+          masterTl.kill();
+          ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
       }
     );
-  });
+  }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div>
       <NavBar />
       <section id="home">
         <Home />
@@ -226,7 +238,7 @@ const App = () => {
         <About />
       </section>
       <div ref={wrapperRef} id="wrapper">
-        <section id="skills" >
+        <section id="skills">
           <Skills />
         </section>
         <section
