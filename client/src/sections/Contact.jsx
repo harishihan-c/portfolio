@@ -1,14 +1,25 @@
 import React from "react";
 import { assets } from "../assets/images/assets";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
 const Contact = () => {
+
+  useGSAP(() => {
+
+
+  })
+
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex items-center justify-around mt-30 w-full h-full">
         <div className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl w-[60%]  sm:w-full  mx-auto text-center mb-10">
           <p>Let's Built something</p>
           <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block mt-4">
-            Built
+            together
           </span>{" "}
         </div>
       </div>
