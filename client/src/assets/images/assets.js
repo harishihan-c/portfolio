@@ -21,6 +21,7 @@ import react from "./React-Dark.svg";
 import instagram from "./instagram.png";
 import facebook from "./facebook.png";
 import linkedin from "./linked in.png";
+import githubicon from "./Github.png"
 
 export const assets = {
   me,
@@ -46,4 +47,5 @@ export const assets = {
   instagram,
   linkedin,
   facebook,
+  githubicon
 };
