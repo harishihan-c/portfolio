@@ -15,13 +15,30 @@ const Projects = () => {
 
   const [active, setActive] = useState("Projects");
 
+  const mainContainer = useRef(null);
+
+  // useGSAP(() => {
+  //   const tl =gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: mainContainer.current,
+  //       start: "top top",
+  //       end: "+=100%",
+  //       pin: mainContainer.current,
+
+  //     }
+  //   })
+  // })
+
   return (
-    <div className="min-h-screen bg-[#E6E6E6] px-20">
+    <div ref={mainContainer} className="min-h-screen bg-[#E6E6E6] px-20">
       <div className="flex justify-between items-center py-8 font-integral-regular text-[20px] ">
         {navArray.map((id) => (
-          <button key={id} onClick={() => setActive(id)}>
-            {id}
-          </button>
+          <div className="relative flex items-center justify-center">
+            <div className={`w-full h-full absolute [clip-path:inset(10%_25%_0%_0%)] -left-2 ${active === id? " bg-lime-primary ": ""}`}></div>
+            <button className="relative z-20" key={id} onClick={() => setActive(id)}>
+              {id}
+            </button>
+          </div>
         ))}
       </div>
       {/* <div className="flex items-center justify-center mt-30">
@@ -37,8 +54,6 @@ const Projects = () => {
         {active === navArray[1] && <ShowDesigns />}
         {active === navArray[2] && <ShowArts />}
       </div>
-
-      
     </div>
   );
 };
