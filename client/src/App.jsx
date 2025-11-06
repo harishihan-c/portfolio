@@ -130,111 +130,206 @@ const App = () => {
           "<0.2"
         );
 
-        let masterTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top top",
-            end: "+=400%",
-            pin: true,
-            scrub: true,
-          },
-        });
-
-        iconArrayRight.forEach((ref) => {
-          masterTl.fromTo(
-            ref.current,
-            {
-              x: 200,
-              y: 400,
-              rotate: 90,
-              autoAlpha: 0,
+        //Desktop Animation
+        if (isDesktop) {
+          let masterTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: wrapperRef.current,
+              start: "top top",
+              end: "+=400%",
+              pin: true,
+              scrub: true,
             },
+          });
+
+          iconArrayRight.forEach((ref) => {
+            masterTl.fromTo(
+              ref.current,
+              {
+                x: 200,
+                y: 400,
+                rotate: 90,
+                autoAlpha: 0,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                rotate: -360,
+                ease: "power3.inOut",
+                duration: isMobile ? 0.1 : 0.7,
+              },
+              "<"
+            );
+          });
+
+          iconArrayLeft.forEach((ref) => {
+            masterTl.fromTo(
+              ref.current,
+              {
+                x: -200,
+                y: 400,
+                rotate: -90,
+                autoAlpha: 0,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                rotate: 360,
+                ease: "power3.inOut",
+                duration: isMobile ? 0.1 : 0.7,
+              },
+              "<"
+            );
+          });
+
+          iconArrayBottom.forEach((ref) => {
+            masterTl.fromTo(
+              ref.current,
+              {
+                y: 400,
+                rotate: -90,
+                autoAlpha: 0,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                rotate: 360,
+                ease: "power3.inOut",
+                duration: isMobile ? 0.1 : 0.7,
+              },
+              "<"
+            );
+          });
+
+          masterTl.to(
+            navRef.current,
             {
               autoAlpha: 1,
-              x: 0,
-              y: 0,
-              rotate: -360,
-              ease: "power3.inOut",
-              duration: isMobile ? 0.4 : 0.7,
+              duration: 0.4,
             },
-            "<"
+            "<0.2"
           );
-        });
 
-        iconArrayLeft.forEach((ref) => {
-          masterTl.fromTo(
-            ref.current,
-            {
-              x: -200,
-              y: 400,
-              rotate: -90,
-              autoAlpha: 0,
+          if (isDesktop) {
+            masterTl.to(
+              skillsContainerRef.current,
+              {
+                scale: 0.9,
+                duration: 0.5,
+              },
+              "b"
+            );
+
+            masterTl.to(
+              projectContainerRef.current,
+              {
+                yPercent: -100,
+                duration: 0.7,
+              },
+              "b"
+            );
+          }
+        } else {
+          let masterTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: skillsContainerRef.current,
+              start: "top top",
+              end: () => `+=800`,
+              pin:skillsContainerRef.current,
+              // pin: projectContainerRef.current,
+              scrub: true,
+              invalidateOnRefresh: true,
+              pinSpacing: true,
+              markers: true,
             },
+          });
+
+          iconArrayRight.forEach((ref) => {
+            masterTl.fromTo(
+              ref.current,
+              {
+                x: 200,
+                y: 400,
+                rotate: 90,
+                autoAlpha: 0,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                rotate: -360,
+                ease: "power3.inOut",
+                duration: 0.9,
+              },
+              "<"
+            );
+          });
+
+          iconArrayLeft.forEach((ref) => {
+            masterTl.fromTo(
+              ref.current,
+              {
+                x: -200,
+                y: 400,
+                rotate: -90,
+                autoAlpha: 0,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                rotate: 360,
+                ease: "power3.inOut",
+                duration: 0.9,
+              },
+              "<"
+            );
+          });
+
+          iconArrayBottom.forEach((ref) => {
+            masterTl.fromTo(
+              ref.current,
+              {
+                y: 400,
+                rotate: -90,
+                autoAlpha: 0,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                rotate: 360,
+                ease: "power3.inOut",
+                duration: 0.9,
+              },
+              "<"
+            );
+          });
+
+          masterTl.to(
+            navRef.current,
             {
               autoAlpha: 1,
-              x: 0,
-              y: 0,
-              rotate: 360,
-              ease: "power3.inOut",
-              duration: isMobile ? 0.4 : 0.7,
+              duration: 0.4,
             },
-            "<"
+            "<0.2"
           );
-        });
+        }
 
-        iconArrayBottom.forEach((ref) => {
-          masterTl.fromTo(
-            ref.current,
-            {
-              y: 400,
-              rotate: -90,
-              autoAlpha: 0,
-            },
-            {
-              autoAlpha: 1,
-              x: 0,
-              y: 0,
-              rotate: 360,
-              ease: "power3.inOut",
-              duration: isMobile ? 0.4 : 0.7,
-            },
-            "<"
-          );
-        });
-
-        masterTl.to(
-          navRef.current,
-          {
-            autoAlpha: 1,
-            duration: 0.4,
-          },
-          "<0.2"
-        );
-
-        masterTl.to(
-          skillsContainerRef.current,
-          {
-            scale: 0.9,
-            duration: 0.5,
-          },
-          "b"
-        );
-
-        masterTl.to(
-          projectContainerRef.current,
-          {
-            yPercent: -100,
-            duration: 0.7,
-          },
-          "b"
-        );
         return () => {
           preTl.kill();
-          masterTl.kill();
+          // masterTl.kill();
           ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
       }
     );
+
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
   }, []);
 
   return (
@@ -247,16 +342,16 @@ const App = () => {
         <About />
       </section>
       <div ref={wrapperRef} id="wrapper">
-        <section id="skills">
+        <section id="skills" className="min-h-screen relative" ref={skillsContainerRef}>
           <Skills />
         </section>
-          <section
-            ref={projectContainerRef}
-            id="projects"
-            className="absolute w-full "
-          >
-            <Projects className="h-screen" />
-          </section>
+        <section
+          ref={projectContainerRef}
+          id="projects"
+          className=" w-full relative  sm:absolute "
+        >
+          <Projects />
+        </section>
       </div>
       <section id="contact">
         <Contact />
