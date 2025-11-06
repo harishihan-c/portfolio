@@ -17,27 +17,33 @@ import tailwindcss from "./TailwindCSS-Dark.svg";
 import vite from "./Vite-Dark.svg";
 import vscode from "./VSCode-Dark.svg";
 import webstrom from "./WebStorm-Dark.svg";
-import react from "./React-Dark.svg"
+import react from "./React-Dark.svg";
+import instagram from "./instagram.png";
+import facebook from "./facebook.png";
+import linkedin from "./linked in.png";
 
 export const assets = {
   me,
-  "css 3":css,
-  "figma":figma,
-  "firebase" :firebase,
-  "git":git,
-  "git hub":github,
-  "html 5" : html5,
-  "java":java,
-  "intellij idea":idea,
-  "javascript":javascript,
-  "mongo db":mongodb,
-  "postman":postman,
-  "tailwind css" :tailwindcss,
-  "vite":vite,
-  "vs code":vscode,
-  "web strom":webstrom,
-  "express js":express,
-  "mysql":mysql,
-  "node js":node,
-  "react":react
+  "css 3": css,
+  figma: figma,
+  firebase: firebase,
+  git: git,
+  "git hub": github,
+  "html 5": html5,
+  java: java,
+  "intellij idea": idea,
+  javascript: javascript,
+  "mongo db": mongodb,
+  postman: postman,
+  "tailwind css": tailwindcss,
+  vite: vite,
+  "vs code": vscode,
+  "web strom": webstrom,
+  "express js": express,
+  mysql: mysql,
+  "node js": node,
+  react: react,
+  instagram,
+  linkedin,
+  facebook,
 };
