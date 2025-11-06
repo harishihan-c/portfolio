@@ -30,7 +30,7 @@ const Projects = () => {
   // })
 
   return (
-    <div ref={mainContainer} className="min-h-screen bg-[#E6E6E6] px-20">
+    <div ref={mainContainer} className="min-h-screen bg-[#E6E6E6] px-10 sm:px-20">
       <div className="flex justify-between items-center py-8 font-integral-regular text-[20px] ">
         {navArray.map((id) => (
           <div className="relative flex items-center justify-center">
