@@ -16,6 +16,8 @@ import { useRefs } from "./context/RfsContext";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
+  // const dummy = useRef(null);
+
   const {
     cssRef,
     expressRef,
@@ -209,16 +211,23 @@ const App = () => {
           "<0.2"
         );
 
-        masterTl.to(skillsContainerRef.current, {
-          scale: 0.9,
-          duration: 0.5
-        }, "b")
+        masterTl.to(
+          skillsContainerRef.current,
+          {
+            scale: 0.9,
+            duration: 0.5,
+          },
+          "b"
+        );
 
-        masterTl.to(projectContainerRef.current, {
-          yPercent: -100,
-          duration: 0.7,
-        }, "b");
-
+        masterTl.to(
+          projectContainerRef.current,
+          {
+            yPercent: -100,
+            duration: 0.7,
+          },
+          "b"
+        );
         return () => {
           preTl.kill();
           masterTl.kill();
@@ -241,13 +250,13 @@ const App = () => {
         <section id="skills">
           <Skills />
         </section>
-        <section
-          ref={projectContainerRef}
-          id="projects"
-          className="absolute w-full "
-        >
-          <Projects className="h-screen" />
-        </section>
+          <section
+            ref={projectContainerRef}
+            id="projects"
+            className="absolute w-full "
+          >
+            <Projects className="h-screen" />
+          </section>
       </div>
       <section id="contact">
         <Contact />
