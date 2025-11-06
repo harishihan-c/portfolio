@@ -30,7 +30,7 @@ const About = () => {
     });
 
     bgTl.to(aboutContainerRef.current, {
-      backgroundColor: "#282c20",
+      backgroundColor: " #282c20",
       duration: 0.5,
     });
 
