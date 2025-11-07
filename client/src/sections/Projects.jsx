@@ -48,7 +48,7 @@ const Projects = () => {
               }`}
             ></div>
             <button
-              className="relative z-20"
+              className="relative z-20 cursor-pointer"
               key={id}
               onClick={() => setActive(id)}
             >
