@@ -340,7 +340,7 @@ const App = () => {
           },
           {
             clipPath: "inset(0% 0% 0% 0%)",
-            duration: 2.5,
+            duration: 3.5,
           },
           "<0.1"
         );
@@ -351,7 +351,7 @@ const App = () => {
           },
           {
             clipPath: "inset(0% 0% 0% 0%)",
-            duration: 2.3,
+            duration: 3.3,
           },
           "<0.5"
         );
