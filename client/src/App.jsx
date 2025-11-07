@@ -43,6 +43,9 @@ const App = () => {
     skillsContainerRef,
     wrapperRef,
     projectContainerRef,
+    title1Ref,
+    title2Ref,
+    titleWrapperRef,
   } = useRefs();
 
   //aRAY
@@ -95,6 +98,7 @@ const App = () => {
     //Initial set values
     gsap.set(navRef.current, { autoAlpha: 0 });
     gsap.set(titleRef.current, { autoAlpha: 0, z: -1000 });
+    gsap.set(title1Ref.current, { z: -1000 });
 
     let mm = gsap.matchMedia();
 
@@ -136,9 +140,11 @@ const App = () => {
             scrollTrigger: {
               trigger: wrapperRef.current,
               start: "top top",
-              end: "+=400%",
+              end: "+=200%",
               pin: true,
               scrub: true,
+              markers: true,
+              
             },
           });
 
@@ -157,7 +163,7 @@ const App = () => {
                 y: 0,
                 rotate: -360,
                 ease: "power3.inOut",
-                duration: isMobile ? 0.1 : 0.7,
+                duration: isMobile ? 0.1 : 1.2,
               },
               "<"
             );
@@ -178,7 +184,7 @@ const App = () => {
                 y: 0,
                 rotate: 360,
                 ease: "power3.inOut",
-                duration: isMobile ? 0.1 : 0.7,
+                duration: isMobile ? 0.1 :  1.2,
               },
               "<"
             );
@@ -198,7 +204,7 @@ const App = () => {
                 y: 0,
                 rotate: 360,
                 ease: "power3.inOut",
-                duration: isMobile ? 0.1 : 0.7,
+                duration: isMobile ? 0.1 :  1.2,
               },
               "<"
             );
@@ -218,7 +224,7 @@ const App = () => {
               skillsContainerRef.current,
               {
                 scale: 0.9,
-                duration: 0.5,
+                duration: 0.9,
               },
               "b"
             );
@@ -227,10 +233,28 @@ const App = () => {
               projectContainerRef.current,
               {
                 yPercent: -100,
-                duration: 0.7,
+                duration: 3,
               },
               "b"
             );
+
+            //      masterTl.fromTo(
+            //   title1Ref.current,
+            //   {
+            //     clipPath: "inset(0% 0% 0% 0%)",
+            //   },
+            //   {
+            //     clipPath: "inset(0% 0% 0% 100%)",
+            //     duration: 0.5,
+            //   }, "0.6"
+            // )
+            // masterTl.fromTo(title2Ref.current, {
+            //     clipPath: "inset(0% 0% 0% 0%)",
+            //   },
+            //   {
+            //     clipPath: "inset(0% 0% 0% 100%)",
+            //     duration: 0.7,
+            //   }, "0.5")
           }
         } else {
           let masterTl = gsap.timeline({
@@ -238,7 +262,7 @@ const App = () => {
               trigger: skillsContainerRef.current,
               start: "top top",
               end: () => `+=800`,
-              pin:skillsContainerRef.current,
+              pin: skillsContainerRef.current,
               // pin: projectContainerRef.current,
               scrub: true,
               invalidateOnRefresh: true,
@@ -319,6 +343,40 @@ const App = () => {
           );
         }
 
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: projectContainerRef.current,
+            start: "top 30%",
+            end: "+=40%",
+            markers: true,
+            scrub: true,
+            anticipatePin: 1,
+          },
+        });
+
+        tl.fromTo(
+          title1Ref.current,
+          {
+            clipPath: "inset(0% 100% 0% 0%)",
+          },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.5,
+          },
+          "0.6"
+        );
+        tl.fromTo(
+          title2Ref.current,
+          {
+            clipPath: "inset(0% 0% 0% 100%)",
+          },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.3,
+          },
+          "0.5"
+        );
+
         return () => {
           preTl.kill();
           // masterTl.kill();
@@ -342,16 +400,22 @@ const App = () => {
         <About />
       </section>
       <div ref={wrapperRef} id="wrapper">
-        <section id="skills" className="min-h-screen relative" ref={skillsContainerRef}>
+        <section
+          id="skills"
+          className="min-h-screen relative"
+          ref={skillsContainerRef}
+        >
           <Skills />
         </section>
-        <section
-          ref={projectContainerRef}
-          id="projects"
-          className=" w-full relative  sm:absolute "
-        >
-          <Projects />
-        </section>
+        <div ref={titleWrapperRef}>
+          <section
+            ref={projectContainerRef}
+            id="projects"
+            className=" w-full relative  sm:absolute "
+          >
+            <Projects />
+          </section>
+        </div>
       </div>
       <section id="contact">
         <Contact />
