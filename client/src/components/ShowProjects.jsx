@@ -103,7 +103,7 @@ const ShowProjects = () => {
             >
               {item.title}
             </h1>
-            <div className="bg-amber-300 h-[50%] mt-2 mx-6 mb-3">
+            <div className=" h-[50%] mt-2 mx-6 mb-3">
               <img
                 src={item.img}
                 alt=""
