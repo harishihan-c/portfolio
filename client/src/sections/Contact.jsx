@@ -1,24 +1,73 @@
-import React from "react";
+import React, { useRef } from "react";
 import { assets } from "../assets/images/assets";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRefs } from "../context/RfsContext";
 
-gsap.registerPlugin(useGSAP)
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
+  const { contactRef, titleRef1, titleRef2 } = useRefs()
 
-  useGSAP(() => {
+  // useGSAP(() => {
+  //   const mm = gsap.matchMedia();
 
+  //   mm.add(
+  //     {
+  //       isMobile: "(max-width: 639px",
+  //       isDesktop: "(min-width: 640px)",
+  //     },
+  //     (context) => {
+  //       const { isMobile, isDesktop } = context.conditions;
 
-  })
+  //       const tl = gsap.timeline({
+  //         scrollTrigger: {
+  //           trigger: contactRef.current,
+  //           start: "top top",
+  //           end: "+=100%",
+  //           // pin: true,
+  //           scrub: true,
+  //           // pinSpacing: false,
+  //           markers: true,
+  //           pinReparent: true
+  //         },
+  //       });
+
+  //       tl.fromTo(
+  //         titleRef1.current,
+  //         {
+  //           clipPath: "inset(0% 100% 0% 0%)",
+  //         },
+  //         {
+  //           clipPath: "inset(0% 0% 0% 0%)",
+  //           duration: 0.8,
+  //         }
+  //       );
+
+  //       tl.fromTo(
+  //         titleRef2.current,
+  //         {
+  //           clipPath: "inset(0% 100% 0% 0%)",
+  //         },
+  //         {
+  //           clipPath: "inset(0% 0% 0% 0%)",
+  //           duration: 0.8,
+  //         }
+  //       );
+  //     }
+  //   );
+  // });
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex items-center justify-around mt-30 w-full h-full">
+    <div ref={contactRef} className="min-h-screen flex flex-col relative ">
+      <div className="flex items-center justify-around py-50 w-full h-full ">
         <div className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl w-[60%]  sm:w-full  mx-auto text-center mb-10">
-          <p>Let's Built something</p>
-          <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block mt-4">
+          <p ref={titleRef1}>Let's Built something</p>
+          <span
+            ref={titleRef2}
+            className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block mt-4"
+          >
             together
           </span>{" "}
         </div>
@@ -39,7 +88,7 @@ const Contact = () => {
                   <img className="w-8" src={assets.facebook} alt="" />
                 </div>
               </div>
-              <button className="bg-white h-20 w-[80%] sm:w-1/3 text-sm">
+              <button className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm">
                 Download CV
               </button>
             </div>
