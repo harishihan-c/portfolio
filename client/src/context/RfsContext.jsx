@@ -33,9 +33,16 @@ export const RfsProvider = ({ children }) => {
   const title1Ref = useRef(null);
   const titleWrapperRef = useRef(null);
   const title2Ref = useRef(null);
+
+    const contactRef = useRef(null);
+    const titleRef1 = useRef(null);
+    const titleRef2 = useRef(null);
   return (
     <RfsContext.Provider
       value={{
+        contactRef,
+        titleRef1,
+        titleRef2,
         mainContainer,
         cssRef,
         expressRef,
