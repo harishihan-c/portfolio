@@ -25,11 +25,13 @@ export const RfsProvider = ({ children }) => {
   const reactRef = useRef(null);
   const titleRef = useRef(null);
 
-  const skillsContainerRef = useRef(null)
-  const navRef = useRef(null)
-  const wrapperRef = useRef(null)
-  const projectContainerRef = useRef(null)
+  const skillsContainerRef = useRef(null);
+  const navRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const projectContainerRef = useRef(null);
 
+  const title1Ref = useRef(null);
+  const titleWrapperRef = useRef(null);
   return (
     <RfsContext.Provider
       value={{
@@ -57,7 +59,9 @@ export const RfsProvider = ({ children }) => {
         skillsContainerRef,
         navRef,
         wrapperRef,
-        projectContainerRef
+        projectContainerRef,
+        title1Ref,
+        titleWrapperRef
       }}
     >
       {children}
