@@ -142,7 +142,7 @@ const App = () => {
               start: "top top",
               end: "+=200%",
               pin: true,
-              scrub: true,
+              scrub: 1,
               markers: true,
               
             },
@@ -346,8 +346,8 @@ const App = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: projectContainerRef.current,
-            start: "top 30%",
-            end: "+=40%",
+            start: "top 20%",
+            end: "+=30%",
             markers: true,
             scrub: true,
             anticipatePin: 1,
@@ -361,9 +361,9 @@ const App = () => {
           },
           {
             clipPath: "inset(0% 0% 0% 0%)",
-            duration: 1.5,
+            duration: 2.5,
           },
-          "0.6"
+          "<0.1"
         );
         tl.fromTo(
           title2Ref.current,
@@ -372,9 +372,9 @@ const App = () => {
           },
           {
             clipPath: "inset(0% 0% 0% 0%)",
-            duration: 1.3,
+            duration: 2.3,
           },
-          "0.5"
+          "<0.5"
         );
 
         return () => {

@@ -23,6 +23,7 @@ const Projects = () => {
       ref={mainContainer}
       className="min-h-screen bg-[#E6E6E6] px-10 sm:px-20 relative w-full perspective-distant"
     >
+      {/* <div className="w-full h-50"></div> */}
       <div className="flex items-center justify-center pt-90 pb-50 ">
         <div
          
