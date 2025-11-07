@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { assets } from "../assets/images/assets";
 
 const ShowProjects = () => {
   const projectData = [
     {
       id: 1,
-      title: "Skill Forge",
-      img: "",
+      title: "Auth System",
+      img: `${assets.auth}`,
       icons: "",
-      text: "A web platform where learners can generate AI-powered roadmaps to discover and learn new skills.",
+      text: "A secure authentication system with user signup, login, and protected routes.",
       isPreview: true,
       isGitHub: true,
       background: "bg-black",
@@ -18,10 +19,10 @@ const ShowProjects = () => {
     },
     {
       id: 2,
-      title: "Note Taking app",
-      img: "",
+      title: "Skill Forge",
+      img: `${assets.skillForge}`,
       icons: "",
-      text: "A simple yet powerful app to create, organize, and manage notes with ease",
+      text: "A web platform that generates personalized learning roadmaps using AI.",
       isPreview: true,
       isGitHub: true,
       background: "bg-white",
@@ -32,10 +33,10 @@ const ShowProjects = () => {
     },
     {
       id: 3,
-      title: "Gemini Clone",
-      img: "",
+      title: "Note Taking app",
+      img: `${assets.note}`,
       icons: "",
-      text: "An AI-powered web app to ask questions and generate content using the Gemini API.",
+      text: " A clean and efficient app to create, organize, and manage personal notes.",
       isPreview: true,
       isGitHub: true,
       background: "bg-lime-primary",
@@ -46,10 +47,24 @@ const ShowProjects = () => {
     },
     {
       id: 4,
-      title: "clothing site",
-      img: "",
+      title: "Gemini Clone",
+      img: `${assets.gemoni}`,
       icons: "",
       text: "An AI-powered web app to ask questions and generate content using the Gemini API.",
+      isPreview: true,
+      isGitHub: true,
+      background: "bg-lime-primary",
+      button1: "white",
+      button2: "black",
+      button1Text: "black",
+      button2Text: "white",
+    },
+    {
+      id: 5,
+      title: "clothing site",
+      img: `${assets.cloth}`,
+      icons: "",
+      text: "A modern clothing storefront showcasing products with a clean shopping interface.",
       isPreview: true,
       isGitHub: true,
       background: "bg-black",
@@ -59,11 +74,11 @@ const ShowProjects = () => {
       butonText2: "black",
     },
     {
-      id: 5,
+      id: 6,
       title: "Movie App",
-      img: "",
+      img: `${assets.movie}`,
       icons: "",
-      text: "An AI-powered web app to ask questions and generate content using the Gemini API.An AI-powered web app to ask questions and generate content using the Gemini API.",
+      text: "A movie browsing app that displays films with carousel effect",
       isPreview: true,
       isGitHub: true,
       background: "bg-white",
@@ -71,20 +86,6 @@ const ShowProjects = () => {
       button2: "lime-primary",
       button1Text: "white",
       button2Text: "black",
-    },
-    {
-      id: 6,
-      title: "",
-      img: "",
-      icons: "",
-      text: "",
-      isPreview: true,
-      isGitHub: true,
-      background: "bg-lime-primary",
-      button1: "white",
-      button2: "black",
-      button1Text: "black",
-      button2Text: "white",
     },
   ];
 
@@ -94,21 +95,36 @@ const ShowProjects = () => {
     <div>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 gap-y-9 ">
         {projectData.slice(0, visible).map((item) => (
-          <div
-            key={item.id}
-            className={`min-h-96 ${item.background} `}
-          >
-            <h1 className={`text-center font-integral-medium text-2xl pt-4 ${item.background === "bg-black" ? "text-white" : ""}`}>
+          <div key={item.id} className={`min-h-96 ${item.background} `}>
+            <h1
+              className={`text-center font-integral-medium text-2xl pt-4 ${
+                item.background === "bg-black" ? "text-white" : ""
+              }`}
+            >
               {item.title}
             </h1>
             <div className="bg-amber-300 h-[50%] mt-2 mx-6 mb-3">
-              <img src={item.img} alt="" />
+              <img
+                src={item.img}
+                alt=""
+                className="object-cover aspect-video w-full h-full"
+              />
             </div>
             <div>{item.icons}</div>
-            <p className={`h-[15%] text-[10px] sm:text-[13px] text-center  mx-6  ${item.background === "bg-black" ? "text-white" : ""}`}>{item.text}</p>
+            <p
+              className={`h-[15%] text-[10px] sm:text-[13px] text-center  mx-6  ${
+                item.background === "bg-black" ? "text-white" : ""
+              }`}
+            >
+              {item.text}
+            </p>
             <div className="flex items-center mt-4 max-w-full mx-6 gap-3">
               <button
-                className={`w-full py-2 bg-${item.button1} text-${item.button1Text} text-[12px] sm:text-[14px]`}
+                className={`${
+                  item.id > 3
+                    ? "hidden"
+                    : `w-full py-2 bg-${item.button1} text-${item.button1Text} text-[12px] sm:text-[14px]`
+                }`}
               >
                 Preview
               </button>
