@@ -1,50 +1,51 @@
 import React, { useState } from 'react'
+import { assets } from '../assets/images/assets';
 
 const ShowArts = () => {
 
     const projectData = [
       {
         id: 1,
-        img: "",
+        img: `${assets.hamilton}`,
         background: "bg-black",
         button: "white",
         butonText: "black",
       },
       {
         id: 2,
-        img: "",
+        img: `${assets.girlFace}`,
         background: "bg-white",
         button: "lime-primary",
         buttonText: "black",
       },
       {
         id: 3,
-        img: "",
+        img: `${assets.girlSide}`,
         background: "bg-lime-primary",
         button: "black",
         buttonText: "white",
       },
       {
         id: 4,
-        img: "",
+        img: `${assets.witcher}`,
         background: "bg-black",
         button: "white",
         butonText: "black",
       },
       {
         id: 5,
-        img: "",
+        img: `${assets.girl}`,
         background: "bg-white",
         button: "lime-primary",
         buttonText: "black",
       },
-      {
-        id: 6,
-        img: "",
-        background: "bg-lime-primary",
-        button: "black",
-        buttonText: "white",
-      },
+      // {
+      //   id: 6,
+      //   img: "",
+      //   background: "bg-lime-primary",
+      //   button: "black",
+      //   buttonText: "white",
+      // },
     ];
   
     const [visible, setVisible] = useState(3);
@@ -53,8 +54,8 @@ const ShowArts = () => {
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 gap-y-9 ">
         {projectData.slice(0, visible).map((item) => (
           <div key={item.id} className={`min-h-96 ${item.background} `}>
-            <div className="bg-amber-300 h-[80%] mb-3">
-              <img src={item.img} alt="" />
+            <div className=" h-[80%] mb-3">
+              <img src={item.img} alt=""  className="object-cover aspect-video w-full h-full" />
             </div>
             
             <div className="flex items-center justify-center mt-4 max-w-full mx-6 gap-3">
