@@ -116,10 +116,10 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div>
-          <p></p>
-          <p></p>
-          <p></p>
+        <div className='flex flex-col sm:flex-row items-center justify-around text-xs py-4 ' >
+          <p>© 2025 Harishihan Chandrakumar. All Rights Reserved.</p>
+          <p>Batticaloa, Sri Lanka</p>
+          <p>harishihan@gmail.com</p>
         </div>
       </div>
     </div>
