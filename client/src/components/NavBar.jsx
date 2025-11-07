@@ -58,7 +58,7 @@ const NavBar = () => {
           activeSection === "home"
             ? "line-through decoration-lime-primary decoration-4 "
             : ""
-        } w-28 px-2 py-2 `}
+        } w-28 px-2 py-2 cursor-pointer`}
         href="#home"
       >
         Home
@@ -70,7 +70,7 @@ const NavBar = () => {
           activeSection === "about"
             ? "line-through decoration-lime-primary decoration-4 "
             : ""
-        } w-28 px-2 py-2`}
+        } w-28 px-2 py-2 cursor-pointer`}
       >
         About
       </a>
@@ -80,7 +80,7 @@ const NavBar = () => {
           activeSection === "skills"
             ? "line-through decoration-lime-primary decoration-4 "
             : ""
-        }w-28 px-2 py-2`}
+        }w-28 px-2 py-2 cursor-pointer`}
         href="#skills"
       >
         Skills
@@ -91,7 +91,7 @@ const NavBar = () => {
           activeSection === "projects"
             ? "line-through decoration-lime-primary decoration-4 "
             : ""
-        } w-28 px-2 py-2 `}
+        } w-28 px-2 py-2 cursor-pointer `}
         href="#projects"
       >
         Projects
@@ -103,7 +103,7 @@ const NavBar = () => {
           activeSection === "contact"
             ? "line-through decoration-lime-primary decoration-4 "
             : ""
-        } w-28 px-2 py-2`}
+        } w-28 px-2 py-2 cursor-pointer`}
         href="#contact"
       >
         Contact

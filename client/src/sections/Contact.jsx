@@ -88,7 +88,7 @@ const Contact = () => {
                   <img className="w-8" src={assets.facebook} alt="" />
                 </div>
               </div>
-              <button className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm">
+              <button className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm cursor-pointer">
                 Download CV
               </button>
             </div>
@@ -110,7 +110,7 @@ const Contact = () => {
                 placeholder="Leave a Message"
                 className="w-full sm:w-3/5 bg-white px-3 py-3 h-32 text-sm"
               />
-              <button className="w-full sm:w-3/5 bg-black text-lime-primary py-3 text-sm">
+              <button className="w-full sm:w-3/5 bg-black text-lime-primary py-3 text-sm cursor-pointer">
                 Send
               </button>
             </div>
@@ -119,7 +119,7 @@ const Contact = () => {
         <div className='flex flex-col sm:flex-row items-center justify-around text-xs py-4 ' >
           <p>© 2025 Harishihan Chandrakumar. All Rights Reserved.</p>
           <p>Batticaloa, Sri Lanka</p>
-          <p>harishihan@gmail.com</p>
+          <p className="cursor-pointer">harishihan@gmail.com</p>
         </div>
       </div>
     </div>

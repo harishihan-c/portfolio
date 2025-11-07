@@ -32,7 +32,7 @@ const StackNav = () => {
             onClick={() => handleOnClick(index)}
             className={`${
               active === id ? "text-lime-primary bg-black" : ""
-            } px-6  py-1.5`}
+            } px-6  py-1.5 cursor-pointer`}
           >
             {id}
           </button>

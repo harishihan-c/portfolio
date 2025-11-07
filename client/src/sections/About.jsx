@@ -196,11 +196,11 @@ const About = () => {
               alt=""
               className="w-72 md:w-96 -translate-y-4"
             />
-            <div className="w-full flex justify-center items-center text-[13px] sm:text-[16px] px-6">
-              <button className="w-48 py-2 bg-lime-primary md:min-w-56">
+            <div className="w-full flex justify-center items-center text-[13px] sm:text-[15px] px-6">
+              <button className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer">
                 Download CV
               </button>
-              <button className="w-48 py-2 bg-black text-white md:w-56 ">
+              <button className="w-48 py-2 bg-black text-white md:w-56 cursor-pointer ">
                 Reach Me
               </button>
             </div>
