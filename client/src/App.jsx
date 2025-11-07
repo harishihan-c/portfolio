@@ -117,7 +117,7 @@ const App = () => {
             start: "top 90%",
             end: "bottom bottom",
             scrub: true,
-            markers: true,
+            // markers: true,
             anticipatePin: 1.5,
             toggleActions: "play pause play pause",
           },
@@ -143,8 +143,6 @@ const App = () => {
               end: "+=200%",
               pin: true,
               scrub: 1,
-              markers: true,
-              
             },
           });
 
@@ -184,7 +182,7 @@ const App = () => {
                 y: 0,
                 rotate: 360,
                 ease: "power3.inOut",
-                duration: isMobile ? 0.1 :  1.2,
+                duration: isMobile ? 0.1 : 1.2,
               },
               "<"
             );
@@ -204,7 +202,7 @@ const App = () => {
                 y: 0,
                 rotate: 360,
                 ease: "power3.inOut",
-                duration: isMobile ? 0.1 :  1.2,
+                duration: isMobile ? 0.1 : 1.2,
               },
               "<"
             );
@@ -237,24 +235,6 @@ const App = () => {
               },
               "b"
             );
-
-            //      masterTl.fromTo(
-            //   title1Ref.current,
-            //   {
-            //     clipPath: "inset(0% 0% 0% 0%)",
-            //   },
-            //   {
-            //     clipPath: "inset(0% 0% 0% 100%)",
-            //     duration: 0.5,
-            //   }, "0.6"
-            // )
-            // masterTl.fromTo(title2Ref.current, {
-            //     clipPath: "inset(0% 0% 0% 0%)",
-            //   },
-            //   {
-            //     clipPath: "inset(0% 0% 0% 100%)",
-            //     duration: 0.7,
-            //   }, "0.5")
           }
         } else {
           let masterTl = gsap.timeline({
@@ -348,7 +328,6 @@ const App = () => {
             trigger: projectContainerRef.current,
             start: "top 20%",
             end: "+=30%",
-            markers: true,
             scrub: true,
             anticipatePin: 1,
           },
@@ -417,6 +396,7 @@ const App = () => {
           </section>
         </div>
       </div>
+
       <section id="contact">
         <Contact />
       </section>
