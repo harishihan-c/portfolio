@@ -21,7 +21,23 @@ import react from "./React-Dark.svg";
 import instagram from "./instagram.png";
 import facebook from "./facebook.png";
 import linkedin from "./linked in.png";
-import githubicon from "./Github.png"
+import githubicon from "./Github.png";
+import girlFace from "./drawings/girl-face.JPG";
+import girlSide from "./drawings/girl-side.JPG";
+import girl from "./drawings/girl.JPG";
+import hamilton from "./drawings/hamilton.jpg";
+import witcher from "./drawings/witcher.JPG";
+
+import auth from "./projects/auth.png";
+import cloth from "./projects/cloth.png";
+import gemoni from "./projects/gemini.png";
+import movie from "./projects/movie.png";
+import note from "./projects/Note App.png";
+import skillForge from "./projects/skill-forge.png";
+
+import beatroot from "./designs/beatroot.jpg";
+import chatapp from "./designs/chatapp.png";
+import forestapp from "./designs/forestapp.png";
 
 export const assets = {
   me,
@@ -47,5 +63,5 @@ export const assets = {
   instagram,
   linkedin,
   facebook,
-  githubicon
+  githubicon,
 };
