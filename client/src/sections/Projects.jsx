@@ -11,7 +11,7 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-  const { title1Ref, titleWrapperRef } = useRefs();
+  const { title1Ref } = useRefs();
   const navArray = ["Projects", "Designs", "Arts"];
 
   const [active, setActive] = useState("Projects");
@@ -21,8 +21,19 @@ const Projects = () => {
   return (
     <div
       ref={mainContainer}
-      className="min-h-screen bg-[#E6E6E6] px-10 sm:px-20 relative w-full"
+      className="min-h-screen bg-[#E6E6E6] px-10 sm:px-20 relative w-full perspective-distant"
     >
+      <div className="flex items-center justify-center py-60 ">
+          <div
+            ref={title1Ref}
+            className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl w-[60%]  sm:w-[70%]  mx-auto text-center mb-10"
+          >
+            <p className="relative w-full  ">Things I've</p>{" "}
+            <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block mt-4 ">
+              Built
+            </span>{" "}
+          </div>
+        </div>
       <div className="flex justify-between items-center py-8 font-integral-regular text-[20px] ">
         {navArray.map((id) => (
           <div className="relative flex items-center justify-center">
@@ -41,19 +52,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      <div ref={titleWrapperRef} className='hidden'>
-        <div className="flex items-center justify-center mt-30 perspective-[1000px] ">
-        <div
-          ref={title1Ref}
-          className="transform-gpu  font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl w-[60%]  sm:w-[70%]  mx-auto text-center mb-10"
-        >
-          <p className="relative w-full  ">Things I've</p>{" "}
-          <span className=" bg-black text-[#D7FF00] px-5 pb-4 pt-0 inline-block mt-4 ">
-            Built
-          </span>{" "}
-        </div>
-      </div>
-      </div>
+
       <div>
         {active === navArray[0] && <ShowProjects />}
         {active === navArray[1] && <ShowDesigns />}
