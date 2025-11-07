@@ -77,4 +77,5 @@ export const assets = {
   skillForge,
   chatapp,
   forestapp,
+  beatroot
 };
