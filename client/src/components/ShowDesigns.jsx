@@ -1,61 +1,63 @@
 import React, { useState } from "react";
+import { assets } from "../assets/images/assets.js";
 
 const ShowDesigns = () => {
   const projectData = [
     {
       id: 1,
-      title: "Skill Forge",
-      img: "",
-      text: "A web platform where learners can generate AI-powered roadmaps to discover and learn new skills.",
+      title: "Chat App",
+      img: `${assets.chatapp}`,
+      text: "A modern and responsive chat interface design.",
       background: "bg-black",
       button: "white",
       butonText: "black",
     },
     {
       id: 2,
-      title: "Note Taking app",
-      img: "",
-      text: "A simple yet powerful app to create, organize, and manage notes with ease",
+      title: "Beatroot logo",
+      img: `${assets.beatroot}`,
+      text: "A creative logo designed for Beatroots Creatives, reflecting simplicity and artistic identity.",
       background: "bg-white",
       button: "lime-primary",
       buttonText: "black",
     },
     {
       id: 3,
-      title: "Gemini Clone",
-      img: "",
-      text: "An AI-powered web app to ask questions and generate content using the Gemini API.",
+      title: "forest app",
+      img: `${assets.forestapp}`,
+      text: "An app to create and preserve digital memories in a forest-inspired capsule.",
       background: "bg-lime-primary",
       button: "black",
       buttonText: "white",
     },
-    {
-      id: 4,
-      title: "Skill Forge",
-      img: "",
-      text: "A web platform where learners can generate AI-powered roadmaps to discover and learn new skills.",
-      background: "bg-black",
-      button: "white",
-      butonText: "black",
-    },
-    {
-      id: 5,
-      title: "Note Taking app",
-      img: "",
-      text: "A simple yet powerful app to create, organize, and manage notes with ease",
-      background: "bg-white",
-      button: "lime-primary",
-      buttonText: "black",
-    },
-    {
-      id: 6,
-      title: "Gemini Clone",
-      img: "",
-      text: "An AI-powered web app to ask questions and generate content using the Gemini API.",
-      background: "bg-lime-primary",
-      button: "black",
-      buttonText: "white",
-    },
+    // {
+    //   id: 4,
+    //   title: "",
+    //   img: "",
+    //   text: "",
+    //   background: "bg-lime-primary",
+    //   button: "black",
+    //   buttonText: "white",
+    // },
+
+    // {
+    //   id: 5,
+    //   title: "",
+    //   img: "",
+    //   text: "",
+    //   background: "bg-white",
+    //   button: "lime-primary",
+    //   buttonText: "black",
+    // },
+    // {
+    //   id: 6,
+    //   title: "Movie App",
+    //   img: "",
+    //   text: "",
+    //   background: "",
+    //   button: "black",
+    //   buttonText: "white",
+    // },
   ];
 
   const [visible, setVisible] = useState(3);
@@ -73,7 +75,11 @@ const ShowDesigns = () => {
               {item.title}
             </h1>
             <div className="bg-amber-300 h-[50%] mt-2 mx-6 mb-3">
-              <img src={item.img} alt="" />
+              <img
+                src={item.img}
+                alt=""
+                className="object-cover aspect-video w-full h-full"
+              />
             </div>
             <div>{item.icons}</div>
             <p
