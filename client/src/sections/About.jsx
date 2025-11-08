@@ -200,9 +200,11 @@ const About = () => {
               <button className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer">
                 Download CV
               </button>
-              <button className="w-48 py-2 bg-black text-white md:w-56 cursor-pointer ">
+              <a href="#contact" className="scroll-auto text-center w-48 py-2 bg-black text-white md:w-56 cursor-pointer ">
+                <button className="">
                 Reach Me
               </button>
+              </a>
             </div>
           </div>
         </div>
