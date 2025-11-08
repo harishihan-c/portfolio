@@ -14,9 +14,9 @@ const About = () => {
   const wrapContainerRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set(aboutContainerRef.current, {
-      backgroundColor: " #ffffff",
-    });
+    // gsap.set(aboutContainerRef.current, {
+    //   backgroundColor: " #ffffff",
+    // });
 
     //Pre Animation background color
     let bgTl = gsap.timeline({
@@ -202,7 +202,11 @@ const About = () => {
               className="w-72 md:w-96 -translate-y-4"
             />
             <div className="w-full flex justify-center items-center text-[13px] sm:text-[15px] px-6">
-              <a href="/Harishihan_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href="/Harishihan_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer">
                   View CV
                 </button>
