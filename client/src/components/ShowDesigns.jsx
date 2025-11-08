@@ -11,6 +11,7 @@ const ShowDesigns = () => {
       background: "bg-black",
       button: "white",
       butonText: "black",
+      link: "https://www.figma.com/design/djAnPBNRJBvSrJxSpo0zlw/Chatapp-Personal-project?node-id=0-1&t=rHIlTlgWMc1p2WmV-1"
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ const ShowDesigns = () => {
       background: "bg-white",
       button: "lime-primary",
       buttonText: "black",
+      link: "https://www.figma.com/design/lm2Z5kp43Yo16ysP2JtSbB/Beatroots-Logo?node-id=0-1&t=LN0oJGIzQYC7dP34-1"
     },
     {
       id: 3,
@@ -29,6 +31,7 @@ const ShowDesigns = () => {
       background: "bg-lime-primary",
       button: "black",
       buttonText: "white",
+      link: "https://www.figma.com/proto/ziOcVdYmc8kptIvAavT4l8/Forest-Chronicle?page-id=0%3A1&team_id=1468192116754706540&node-id=32-37&starting-point-node-id=32%3A37&t=DDiPINsKcwHus5VG-1"
     },
     // {
     //   id: 4,
@@ -90,18 +93,20 @@ const ShowDesigns = () => {
               {item.text}
             </p>
             <div className="flex items-center justify-center mt-4 max-w-full mx-6 gap-3">
-              <button
+              <a href={item.link} className="w-full h-full flex justify-center" target="_blank">
+                <button
                 className={`w-1/2 py-2 bg-${item.button} text-${item.buttonText} text-[12px] sm:text-[14px]`}
               >
                 Figma
               </button>
+              </a>
             </div>
           </div>
         ))}
       </div>
       <div className="w-full flex justify-center ">
         <button
-          className="w-30 h-10 bg-white my-10 "
+          className="w-30 h-10 bg-white my-10 cursor-pointer"
           onClick={() => {
             if (visible <= 3) {
               setVisible(visible + 3);

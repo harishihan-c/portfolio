@@ -10,7 +10,7 @@ const ShowProjects = () => {
       icons: "",
       text: "A secure authentication system with user signup, login, and protected routes.",
       isPreview: true,
-      isGitHub: true,
+      isGitHub: "https://github.com/harishihan-c/Authentication-System.git",
       background: "bg-black",
       button1: "white",
       button2: "lime-primary",
@@ -24,7 +24,7 @@ const ShowProjects = () => {
       icons: "",
       text: "A web platform that generates personalized learning roadmaps using AI.",
       isPreview: true,
-      isGitHub: true,
+      isGitHub: "https://github.com/Bhanuka10/Capstone.git",
       background: "bg-white",
       button1: "black",
       button2: "lime-primary",
@@ -38,7 +38,7 @@ const ShowProjects = () => {
       icons: "",
       text: " A clean and efficient app to create, organize, and manage personal notes.",
       isPreview: true,
-      isGitHub: true,
+      isGitHub: "https://github.com/harishihan-c/Note-Taking-app.git",
       background: "bg-lime-primary",
       button1: "white",
       button2: "black",
@@ -52,7 +52,7 @@ const ShowProjects = () => {
       icons: "",
       text: "An AI-powered web app to ask questions and generate content using the Gemini API.",
       isPreview: true,
-      isGitHub: true,
+      isGitHub: "https://github.com/harishihan-c/Gemini-Clone.git",
       background: "bg-lime-primary",
       button1: "white",
       button2: "black",
@@ -66,7 +66,7 @@ const ShowProjects = () => {
       icons: "",
       text: "A modern clothing storefront showcasing products with a clean shopping interface.",
       isPreview: true,
-      isGitHub: true,
+      isGitHub: "https://github.com/harishihan-c/Clothing-website.git",
       background: "bg-black",
       button1: "white",
       button2: "lime-primary",
@@ -80,7 +80,7 @@ const ShowProjects = () => {
       icons: "",
       text: "A movie browsing app that displays films with carousel effect",
       isPreview: true,
-      isGitHub: true,
+      isGitHub: "https://github.com/harishihan-c/Movie-Landing-Page.git",
       background: "bg-white",
       button1: "black",
       button2: "lime-primary",
@@ -121,25 +121,31 @@ const ShowProjects = () => {
             <div className="flex items-center mt-4 max-w-full mx-6 gap-3">
               <button
                 className={`${
-                  item.id > 3
+                  item.id > 0
                     ? "hidden"
                     : `w-full py-2 bg-${item.button1} text-${item.button1Text} text-[12px] sm:text-[14px]`
                 }`}
               >
                 Preview
               </button>
-              <button
-                className={`w-full py-2 bg-${item.button2} text-${item.button2Text} text-[12px] sm:text-[14px]`}
+              <a
+                href={item.isGitHub}
+                className="w-full h-full "
+                target="_blank"
               >
-                Git Hub
-              </button>
+                <button
+                  className={`w-full py-2 bg-${item.button2} text-${item.button2Text} text-[12px] sm:text-[14px] cursor-pointer`}
+                >
+                  Git Hub
+                </button>
+              </a>
             </div>
           </div>
         ))}
       </div>
       <div className="w-full flex justify-center ">
         <button
-          className="w-30 h-10 bg-white my-10 "
+          className="w-30 h-10 bg-white my-10 cursor-pointer"
           onClick={() => {
             if (visible <= 3) {
               setVisible(visible + 3);
