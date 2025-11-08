@@ -7,7 +7,7 @@ import ShowProjects from "../components/ShowProjects";
 import ShowDesigns from "../components/ShowDesigns";
 import ShowArts from "../components/ShowArts";
 
-gsap.registerPlugin(useGSAP);
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {

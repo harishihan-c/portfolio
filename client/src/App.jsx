@@ -13,7 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useRefs } from "./context/RfsContext";
 
-gsap.registerPlugin(useGSAP);
+
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
   // const dummy = useRef(null);

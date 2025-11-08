@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRefs } from "../context/RfsContext";
 
-gsap.registerPlugin(useGSAP);
+
 gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
   const { contactRef, titleRef1, titleRef2 } = useRefs()
