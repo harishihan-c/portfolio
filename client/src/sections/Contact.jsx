@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { assets } from "../assets/images/assets";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -9,6 +9,37 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
   const { contactRef, titleRef1, titleRef2 } = useRefs();
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://formspree.io/f/xnnlapzq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("Failed to send message. Try again later.");
+      }
+    } catch (err) {
+      setStatus("An error occurred. Try again later.");
+      console.error(err);
+    }
+  };
   // useGSAP(() => {
   //   const mm = gsap.matchMedia();
 
@@ -87,33 +118,55 @@ const Contact = () => {
                   <img className="w-8" src={assets.facebook} alt="" />
                 </div>
               </div>
-              <a href="/Harishihan_CV.pdf" download className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm cursor-pointer">
+              <a
+                href="/Harishihan_CV.pdf"
+                download
+                className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm cursor-pointer"
+              >
                 <button className="w-full h-full cursor-pointer">
                   Download CV
                 </button>
               </a>
             </div>
-            <div className="w-full h-full flex flex-col items-center justify-center  gap-y-8">
+            <div className="w-full h-full flex flex-col items-center justify-center gap-y-8 ">
               <h1 className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-6xl pt-4 mb-5">
                 Reach Me
               </h1>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full sm:w-3/5 bg-white px-3 py-3 text-sm"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className=" w-full sm:w-3/5 bg-white px-3 py-3 text-sm"
-              />
-              <textarea
-                placeholder="Leave a Message"
-                className="w-full sm:w-3/5 bg-white px-3 py-3 h-32 text-sm"
-              />
-              <button className="w-full sm:w-3/5 bg-black text-lime-primary py-3 text-sm cursor-pointer">
-                Send
-              </button>
+              <form
+                onSubmit={handleSubmit}
+                className="w-full h-full flex flex-col items-center gap-y-8"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Name"
+                  className="w-full sm:w-3/5 bg-white px-3 py-3 text-sm"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  className=" w-full sm:w-3/5 bg-white px-3 py-3 text-sm"
+                />
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Leave a Message"
+                  className="w-full sm:w-3/5 bg-white px-3 py-3 h-32 text-sm"
+                />
+                <button
+                  type="submit"
+                  className="w-full sm:w-3/5 bg-black text-lime-primary py-3 text-sm cursor-pointer"
+                >
+                  Send
+                </button>
+                {status && <p className="text-center text-sm mt-2">{status}</p>}
+              </form>
             </div>
           </div>
         </div>
