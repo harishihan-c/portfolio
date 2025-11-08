@@ -60,7 +60,7 @@ const Contact = () => {
   // });
 
   return (
-    <div ref={contactRef} className="min-h-screen flex flex-col relative ">
+    <div ref={contactRef} className="min-h-screen flex flex-col  ">
       <div className="flex items-center justify-around py-50 w-full h-full ">
         <div className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl w-[60%]  sm:w-full  mx-auto text-center mb-10">
           <p ref={titleRef1}>Let's Built something</p>
