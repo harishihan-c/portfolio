@@ -22,11 +22,11 @@ import instagram from "./instagram.png";
 import facebook from "./facebook.png";
 import linkedin from "./linked in.png";
 import githubicon from "./Github.png";
-import girlFace from "./drawings/girl-face.JPG";
-import girlSide from "./drawings/girl-side.JPG";
-import girl from "./drawings/girl.JPG";
+import girlFace from "./drawings/girl-face.jpg";
+import girlSide from "./drawings/girl-side.jpg";
+import girl from "./drawings/girl.jpg";
 import hamilton from "./drawings/hamilton.jpg";
-import witcher from "./drawings/witcher.JPG";
+import witcher from "./drawings/witcher.jpg";
 
 import auth from "./projects/auth.png";
 import cloth from "./projects/cloth.png";
