@@ -5,10 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRefs } from "../context/RfsContext";
 
-
 gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
-  const { contactRef, titleRef1, titleRef2 } = useRefs()
+  const { contactRef, titleRef1, titleRef2 } = useRefs();
 
   // useGSAP(() => {
   //   const mm = gsap.matchMedia();
@@ -88,12 +87,14 @@ const Contact = () => {
                   <img className="w-8" src={assets.facebook} alt="" />
                 </div>
               </div>
-              <button className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm cursor-pointer">
-                Download CV
-              </button>
+              <a href="/Harishihan_CV.pdf" download className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm cursor-pointer">
+                <button className="w-full h-full cursor-pointer">
+                  Download CV
+                </button>
+              </a>
             </div>
             <div className="w-full h-full flex flex-col items-center justify-center  gap-y-8">
-              <h1 className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-7xl mb-5">
+              <h1 className="font-integral-extra-bold text-[40px] sm:text-5xl lg:text-6xl pt-4 mb-5">
                 Reach Me
               </h1>
               <input
@@ -116,7 +117,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col sm:flex-row items-center justify-around text-xs py-4 ' >
+        <div className="flex flex-col sm:flex-row items-center justify-around text-xs py-4 ">
           <p>© 2025 Harishihan Chandrakumar. All Rights Reserved.</p>
           <p>Batticaloa, Sri Lanka</p>
           <p className="cursor-pointer">harishihan@gmail.com</p>
