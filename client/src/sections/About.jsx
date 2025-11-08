@@ -28,10 +28,16 @@ const About = () => {
       },
     });
 
-    bgTl.to(aboutContainerRef.current, {
-      backgroundColor: " #282c20",
-      duration: 0.5,
-    });
+    bgTl.fromTo(
+      aboutContainerRef.current,
+      {
+        backgroundColor: " #ffffff",
+      },
+      {
+        backgroundColor: " #282c20",
+        duration: 0.5,
+      }
+    );
 
     let mm = gsap.matchMedia();
 
@@ -199,10 +205,11 @@ const About = () => {
               <button className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer">
                 Download CV
               </button>
-              <a href="#contact" className="scroll-auto text-center w-48 py-2 bg-black text-white md:w-56 cursor-pointer ">
-                <button className="">
-                Reach Me
-              </button>
+              <a
+                href="#contact"
+                className="scroll-auto text-center w-48 py-2 bg-black text-white md:w-56 cursor-pointer "
+              >
+                <button className="">Reach Me</button>
               </a>
             </div>
           </div>
