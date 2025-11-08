@@ -24,7 +24,7 @@ const StackNav = () => {
     >
       <nav
         ref={navRef}
-        className="flex items-center justify-center gap-8 h-[30%] w-full"
+        className="flex z-9999 items-center justify-center gap-8 sm:h-[30%] w-ful flex-wrap py-10"
       >
         {nameArray.map((id, index) => (
           <button
