@@ -37,3 +37,8 @@ body {
     width: 4.5%;
   }
 }
+
+.backdrop-blur-md {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Mobile Safari */
+}

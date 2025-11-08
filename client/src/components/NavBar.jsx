@@ -46,7 +46,7 @@ const NavBar = () => {
   }, []);
   return (
     <div
-      className={`fixed z-9999 left-1/2 -translate-x-1/2 w-2xl mt-2 px-10 py-1 flex flex-col sm:flex-row justify-between items-center rounded-full text-center backdrop-blur-3xl  ${
+      className={`fixed z-9999 lg:left-1/2 lg:-translate-x-1/2 w-screen  lg:w-2xl mt-2 px-10 py-1 flex flex-col sm:flex-row justify-between items-center lg:rounded-full text-center  bg-black/30 backdrop-blur-md lg:backdrop-blur-3xl lg:bg-transparent  ${
         isVisible
           ? "translate-y-0 duration-500 "
           : "-translate-y-[200%] duration-500"
