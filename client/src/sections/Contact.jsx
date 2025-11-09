@@ -111,11 +111,19 @@ const Contact = () => {
                   <span className="text-lime-primary">Connect </span>With Me
                 </span>
                 <div className="w-1/4 h-full flex flex-col items-center justify-end gap-y-2 ">
-                  <img src={assets.githubicon} alt="" />
-                  <img src={assets.linkedin} alt="" />
+                  <a href="https://github.com/harishihan-c" target="_blank">
+                    <img src={assets.githubicon} alt="" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/harishihan" target="_blank">
+                    <img src={assets.linkedin} alt="" />
+                  </a>
 
-                  <img src={assets.instagram} alt="" />
-                  <img className="w-8" src={assets.facebook} alt="" />
+                  <a href="https://www.instagram.com/harishihan_/" target="_blank">
+                    <img src={assets.instagram} alt="" />
+                  </a>
+                  <a href="https://www.facebook.com/harishihan/" target="_blank">
+                    <img className="w-8" src={assets.facebook} alt="" />
+                  </a>
                 </div>
               </div>
               <a
