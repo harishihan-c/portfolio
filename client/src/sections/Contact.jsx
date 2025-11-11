@@ -127,7 +127,7 @@ const Contact = () => {
                 </div>
               </div>
               <a
-                href="/Harishihan_CV.pdf"
+                href="/Harishihan_CV_SE.pdf"
                 download
                 className="bg-white h-20 w-[80%] sm:w-1/3 text-xs sm:text-sm cursor-pointer"
               >

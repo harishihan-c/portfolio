@@ -203,11 +203,12 @@ const About = () => {
             />
             <div className="w-full flex justify-center items-center text-[13px] sm:text-[15px] px-6">
               <a
-                href="/Harishihan_CV.pdf"
+                href="/Harishihan_CV_SE.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer text-center"
               >
-                <button className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer">
+                <button className="cursor-pointer" >
                   View CV
                 </button>
               </a>
@@ -215,7 +216,7 @@ const About = () => {
                 href="#contact"
                 className="scroll-auto text-center w-48 py-2 bg-black text-white md:w-56 cursor-pointer "
               >
-                <button className="">Reach Me</button>
+                <button className="cursor-pointer">Reach Me</button>
               </a>
             </div>
           </div>
