@@ -47,7 +47,7 @@ const Home = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: isDesktop ? "+=2000" : "+=1000",
+            end: isDesktop ? "+=2000" : "+=500",
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -93,7 +93,7 @@ const Home = () => {
         tl.to(
           finalRef.current,
           {
-            y: isMobile ? -100 : -230,
+            y: isMobile ? -50 : -230,
             z: 0,
             autoAlpha: 1,
             duration: 0.8,
