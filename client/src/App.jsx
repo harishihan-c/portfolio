@@ -247,7 +247,6 @@ const App = () => {
               scrub: true,
               invalidateOnRefresh: true,
               pinSpacing: true,
-              markers: true,
             },
           });
 
