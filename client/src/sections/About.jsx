@@ -18,40 +18,40 @@ const About = () => {
     //   backgroundColor: " #ffffff",
     // });
 
+    //Pre Animation background color
+    let bgTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutContainerRef.current,
+        start: "top 20%",
+        end: "bottom bottom",
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    bgTl.fromTo(
+      aboutContainerRef.current,
+      {
+        backgroundColor: " #ffffff",
+      },
+      {
+        backgroundColor: " #282c20",
+        duration: 0.5,
+      }
+    );
+
     let mm = gsap.matchMedia();
 
     mm.add(
       {
         isMobile: "(max-width: 639px)",
-        isDesktop: "(min-width: 640px)",
+        isDesktop: "(min-width: 768px)",
       },
       (context) => {
         let { isMobile, isDesktop } = context.conditions;
 
         // pre Animation Text and Card
         if (isDesktop) {
-          //Pre Animation background color
-          let bgTl = gsap.timeline({
-            scrollTrigger: {
-              trigger: aboutContainerRef.current,
-              start: "top 20%",
-              end: "bottom bottom",
-              scrub: true,
-              invalidateOnRefresh: true,
-            },
-          });
-
-          bgTl.fromTo(
-            aboutContainerRef.current,
-            {
-              backgroundColor: " #ffffff",
-            },
-            {
-              backgroundColor: " #282c20",
-              duration: 0.5,
-            }
-          );
-
           let initTl = gsap.timeline({
             scrollTrigger: {
               trigger: aboutContainerRef.current,
@@ -86,65 +86,64 @@ const About = () => {
             },
             "0.6"
           );
+        } else {
+          let initTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: aboutContainerRef.current,
+              scrub: true,
+              start: "top bottom",
+              end: "+=1000",
+              invalidateOnRefresh: true,
+            },
+          });
+          initTl.fromTo(
+            aboutTitleRef.current,
+            { x: 800, y: 150, autoAlpha: 0 },
+            {
+              y: 0,
+              x: 0,
+              scale: 0.7,
+              transformOrigin: "left top",
+              autoAlpha: 1,
+              duration: 1,
+              // ease: "power4.inOut",
+            }
+          );
+
+          initTl.fromTo(
+            cardRef.current,
+            { x: 1000, autoAlpha: 0 },
+            {
+              x: 0,
+              autoAlpha: 1,
+              duration: 0.9,
+            },
+            "0.6"
+          );
         }
-        // else {
-        //   let initTl = gsap.timeline({
-        //     scrollTrigger: {
-        //       trigger: aboutContainerRef.current,
-        //       scrub: true,
-        //       start: "top bottom",
-        //       end: "+=1000",
-        //       invalidateOnRefresh: true,
-        //     },
-        //   });
-        //   initTl.fromTo(
-        //     aboutTitleRef.current,
-        //     { x: 800, y: 150, autoAlpha: 0 },
-        //     {
-        //       y: 0,
-        //       x: 0,
-        //       scale: 0.7,
-        //       transformOrigin: "left top",
-        //       autoAlpha: 1,
-        //       duration: 1,
-        //       // ease: "power4.inOut",
-        //     }
-        //   );
 
-        //   initTl.fromTo(
-        //     cardRef.current,
-        //     { x: 1000, autoAlpha: 0 },
-        //     {
-        //       x: 0,
-        //       autoAlpha: 1,
-        //       duration: 0.9,
-        //     },
-        //     "0.6"
-        //   );
-        // }
+        //Actual Timeline
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: aboutContainerRef.current,
+            start: "top top",
+            end: "+=800",
+            pin: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
 
-        // //Actual Timeline
-        // let tl = gsap.timeline({
-        //   scrollTrigger: {
-        //     trigger: aboutContainerRef.current,
-        //     start: "top top",
-        //     end: "+=800",
-        //     pin: true,
-        //     scrub: true,
-        //     invalidateOnRefresh: true,
-        //   },
-        // });
-
-        // tl.to(
-        //   aboutTitleRef.current,
-        //   {
-        //     scale: 0.45,
-        //     transformOrigin: "left top",
-        //     duration: 0.3,
-        //     color: "#ffffff",
-        //   },
-        //   "a"
-        // );
+        tl.to(
+          aboutTitleRef.current,
+          {
+            scale: 0.45,
+            transformOrigin: "left top",
+            duration: 0.3,
+            color: "#ffffff",
+          },
+          "a"
+        );
 
         // tl.to(
         //   cardRef.current,
