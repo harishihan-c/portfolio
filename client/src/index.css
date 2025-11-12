@@ -19,6 +19,7 @@
 body {
   font-family: "poppins", sans-serif;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .icon {

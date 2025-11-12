@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -42,7 +41,7 @@ const Home = () => {
         isDesktop: "(min-width:640px)",
       },
       (context) => {
-        let { isMobile, isTab, isDesktop, isWide } = context.conditions;
+        let { isMobile, isDesktop } = context.conditions;
 
         let tl = gsap.timeline({
           scrollTrigger: {
@@ -53,7 +52,7 @@ const Home = () => {
             pin: true,
             pinSpacing: true,
             anticipatePin: 1,
-            // markers: true,
+            invalidateOnRefresh: true,
           },
         });
 
@@ -83,7 +82,7 @@ const Home = () => {
         tl.to(
           nameTextRef.current,
           {
-            y: isMobile ? "-20vh" : "-40vh",
+            y: isMobile ? -window.innerHeight*0.05 : -window.innerHeight*0.4,
             duration: 0.5,
             ease: "power1.inOut",
           },
@@ -107,7 +106,12 @@ const Home = () => {
       }
     );
 
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", refresh);
+    window.addEventListener("load", refresh);
     return () => {
+      window.removeEventListener("resize", refresh);
+      window.removeEventListener("load", refresh);
       introTl.kill();
       mm.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -116,7 +120,7 @@ const Home = () => {
   return (
     <div
       ref={containerRef}
-      className=" flex flex-col justify-center w-max-screen h-screen relative perspective-distant"
+      className=" flex flex-col justify-center w-max-screen min-h-screen relative perspective-distant"
     >
       <div className="mx-auto sm:ml-14 sm:mr-0  ">
         <p
