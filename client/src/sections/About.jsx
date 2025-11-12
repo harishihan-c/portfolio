@@ -25,6 +25,7 @@ const About = () => {
         start: "top 20%",
         end: "bottom bottom",
         scrub: true,
+        invalidateOnRefresh: true,
       },
     });
 
@@ -44,12 +45,10 @@ const About = () => {
     mm.add(
       {
         isMobile: "(max-width: 639px)",
-        isTab: "(max-width: 767px)",
         isDesktop: "(min-width: 768px)",
-        isWide: "(min-width: 1280px)",
       },
       (context) => {
-        let { isMobile, isTab, isDesktop, isWide } = context.conditions;
+        let { isMobile, isDesktop } = context.conditions;
 
         // pre Animation Text and Card
         if (isDesktop) {
@@ -59,6 +58,7 @@ const About = () => {
               scrub: true,
               start: "top bottom",
               end: "+=1000",
+              invalidateOnRefresh: true,
             },
           });
 
@@ -93,6 +93,7 @@ const About = () => {
               scrub: true,
               start: "top bottom",
               end: "+=1000",
+              invalidateOnRefresh: true,
             },
           });
           initTl.fromTo(
@@ -129,6 +130,7 @@ const About = () => {
             end: "+=800",
             pin: true,
             scrub: true,
+            invalidateOnRefresh: true,
           },
         });
 
@@ -153,6 +155,15 @@ const About = () => {
         // );
       }
     );
+
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", refresh);
+    window.addEventListener("orientationchange", refresh);
+
+    return () => {
+      window.removeEventListener("resize", refresh);
+      window.removeEventListener("orientationchange", refresh);
+    };
   });
   return (
     <div
@@ -208,9 +219,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="w-48 py-2 bg-lime-primary md:min-w-56 cursor-pointer text-center"
               >
-                <button className="cursor-pointer" >
-                  View CV
-                </button>
+                <button className="cursor-pointer">View CV</button>
               </a>
               <a
                 href="#contact"
