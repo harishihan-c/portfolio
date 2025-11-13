@@ -118,6 +118,7 @@ const Home = () => {
             z: 0,
             y: 100,
             autoAlpha: 1,
+            duration: 0.8
           });
         }
         // tl.to({}, { duration: 0.1 });
