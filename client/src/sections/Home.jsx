@@ -43,65 +43,83 @@ const Home = () => {
       (context) => {
         let { isMobile, isDesktop } = context.conditions;
 
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: isDesktop ? "+=2000" : "+=500",
-            scrub: true,
-            pin: true,
-            pinSpacing: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          },
-        });
+        if (isDesktop) {
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top top",
+              end: isDesktop ? "+=2000" : "+=1000",
+              scrub: true,
+              pin: true,
+              pinSpacing: true,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
+          });
 
-        //Cover Hello
-        tl.fromTo(
-          helloRef.current,
-          {
-            clipPath: "inset(0% 0% 0% 0%)",
-          },
-          {
-            clipPath: "inset(0% 0% 0% 100%)",
-            duration: 0.05,
-          }
-        );
+          //Cover Hello
+          tl.fromTo(
+            helloRef.current,
+            {
+              clipPath: "inset(0% 0% 0% 0%)",
+            },
+            {
+              clipPath: "inset(0% 0% 0% 100%)",
+              duration: 0.05,
+            }
+          );
 
-        //Move and shrink name to top
-        tl.to(
-          nameTextRef.current,
-          {
-            scale: 0.45,
-            transformOrigin: "left top",
-            duration: 0.9,
-          },
-          "a"
-        );
+          //Move and shrink name to top
+          tl.to(
+            nameTextRef.current,
+            {
+              scale: 0.45,
+              transformOrigin: "left top",
+              duration: 0.9,
+            },
+            "a"
+          );
 
-        tl.to(
-          nameTextRef.current,
-          {
-            y: isMobile ? -window.innerHeight*0.05 : -window.innerHeight*0.4,
-            duration: 0.5,
-            ease: "power1.inOut",
-          },
-          "a"
-        );
+          tl.to(
+            nameTextRef.current,
+            {
+              y: isMobile
+                ? -window.innerHeight * 0.05
+                : -window.innerHeight * 0.4,
+              duration: 0.5,
+              ease: "power1.inOut",
+            },
+            "a"
+          );
 
-        //Show final text
-        tl.to(
-          finalRef.current,
-          {
-            y: isMobile ? -50 : -230,
+          //Show final text
+          tl.to(
+            finalRef.current,
+            {
+              y: isMobile ? -50 : -230,
+              z: 0,
+              autoAlpha: 1,
+              duration: 0.8,
+              ease: "power1.inOut",
+            },
+            "<0.1"
+          );
+        } else {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "bottom bottom",
+              end: "bottom 60%",
+              scrub: true,
+            },
+          });
+
+          tl.to(finalRef.current, {
             z: 0,
+            y: 100,
             autoAlpha: 1,
-            duration: 0.8,
-            ease: "power1.inOut",
-          },
-          "<0.1"
-        );
-
+          });
+        }
         // tl.to({}, { duration: 0.1 });
       }
     );
@@ -143,7 +161,7 @@ const Home = () => {
 
       <div
         ref={finalRef}
-        className="font-integral-extra-bold text-3xl px-6 sm:text-7xl sm:px-0  text-center"
+        className="font-integral-extra-bold text-3xl px-6  sm:text-7xl  sm:px-0  text-center"
       >
         <p>A FullStack </p>
         <p>Developer, Designer</p> <p> and an Artist</p>
