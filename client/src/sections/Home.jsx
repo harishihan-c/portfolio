@@ -108,7 +108,7 @@ const Home = () => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "bottom bottom",
+              start: "bottom 90%",
               end: "bottom 60%",
               scrub: true,
             },
