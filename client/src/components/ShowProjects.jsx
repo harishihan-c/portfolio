@@ -9,7 +9,7 @@ const ShowProjects = () => {
       img: `${assets.auth}`,
       icons: "",
       text: "A secure authentication system with user signup, login, and protected routes.",
-      isPreview: true,
+      isPreview: "https://authentication-system-frontend-topaz.vercel.app/",
       isGitHub: "https://github.com/harishihan-c/Authentication-System.git",
       background: "bg-black",
       button1: "white",
@@ -37,7 +37,7 @@ const ShowProjects = () => {
       img: `${assets.note}`,
       icons: "",
       text: " A clean and efficient app to create, organize, and manage personal notes.",
-      isPreview: true,
+      isPreview: "https://note-taking-app-1090.onrender.com",
       isGitHub: "https://github.com/harishihan-c/Note-Taking-app.git",
       background: "bg-lime-primary",
       button1: "white",
@@ -119,15 +119,19 @@ const ShowProjects = () => {
               {item.text}
             </p>
             <div className="flex items-center mt-4 max-w-full mx-6 gap-3">
-              <button
+              <a
+                href={item.isPreview}
                 className={`${
-                  item.id > 0
-                    ? "hidden"
-                    : `w-full py-2 bg-${item.button1} text-${item.button1Text} text-[12px] sm:text-[14px]`
+                  item.id > 3 || item.id == "2" ? "hidden" : "w-full h-full "
                 }`}
+                target="_blank"
               >
-                Preview
-              </button>
+                <button
+                  className={`w-full py-2 bg-${item.button1} text-${item.button1Text} text-[12px] sm:text-[14px] cursor-pointer`}
+                >
+                  Preview
+                </button>
+              </a>
               <a
                 href={item.isGitHub}
                 className="w-full h-full "
