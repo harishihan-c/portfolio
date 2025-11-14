@@ -56,7 +56,7 @@ const NavBar = () => {
         onClick={() => setActiveSection("home")}
         className={`${
           activeSection === "home"
-            ? "line-through decoration-lime-primary decoration-4 "
+            ? "line-through decoration-lime-primary decoration-2 "
             : ""
         } w-28 px-2 py-2 cursor-pointer`}
         href="#home"
@@ -68,7 +68,7 @@ const NavBar = () => {
         href="#about"
         className={`${
           activeSection === "about"
-            ? "line-through decoration-lime-primary decoration-4 "
+            ? "line-through decoration-lime-primary decoration-2 "
             : ""
         } w-28 px-2 py-2 cursor-pointer`}
       >
@@ -78,7 +78,7 @@ const NavBar = () => {
         onClick={() => setActiveSection("skills")}
         className={`${
           activeSection === "skills"
-            ? "line-through decoration-lime-primary decoration-4 "
+            ? "line-through decoration-lime-primary decoration-2 "
             : ""
         }w-28 px-2 py-2 cursor-pointer`}
         href="#skills"
@@ -89,7 +89,7 @@ const NavBar = () => {
         onClick={() => setActiveSection("projects")}
         className={`${
           activeSection === "projects"
-            ? "line-through decoration-lime-primary decoration-4 "
+            ? "line-through decoration-lime-primary decoration-2 "
             : ""
         } w-28 px-2 py-2 cursor-pointer `}
         href="#projects"
@@ -101,7 +101,7 @@ const NavBar = () => {
         onClick={() => setActiveSection("contact")}
         className={`${
           activeSection === "contact"
-            ? "line-through decoration-lime-primary decoration-4 "
+            ? "line-through decoration-lime-primary decoration-2"
             : ""
         } w-28 px-2 py-2 cursor-pointer`}
         href="#contact"
