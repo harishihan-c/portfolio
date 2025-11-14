@@ -38,6 +38,7 @@ import skillForge from "./projects/skill-forge.png";
 import beatroot from "./designs/beatroot.jpg";
 import chatapp from "./designs/chatapp.png";
 import forestapp from "./designs/forestapp.png";
+import portfolio from "./designs/portfolio.png";
 
 export const assets = {
   me,
@@ -78,4 +79,5 @@ export const assets = {
   chatapp,
   forestapp,
   beatroot,
+  portfolio,
 };
