@@ -33,15 +33,16 @@ const ShowDesigns = () => {
       buttonText: "white",
       link: "https://www.figma.com/proto/ziOcVdYmc8kptIvAavT4l8/Forest-Chronicle?page-id=0%3A1&team_id=1468192116754706540&node-id=32-37&starting-point-node-id=32%3A37&t=DDiPINsKcwHus5VG-1"
     },
-    // {
-    //   id: 4,
-    //   title: "",
-    //   img: "",
-    //   text: "",
-    //   background: "bg-lime-primary",
-    //   button: "black",
-    //   buttonText: "white",
-    // },
+    {
+      id: 4,
+      title: "Portfolio Design",
+      img: `${assets.portfolio}`,
+      text: "Clean and modern single-page portfolio highlighting creativity through simple design.",
+      background: "bg-lime-primary",
+      button: "black",
+      buttonText: "white",
+      link: "https://www.figma.com/design/thkIs3Xnbt2b96K8CXScTb/Portfolio-Website?node-id=155-1722&t=8yvsSApmbWDnJjJJ-1"
+    },
 
     // {
     //   id: 5,
@@ -93,9 +94,9 @@ const ShowDesigns = () => {
               {item.text}
             </p>
             <div className="flex items-center justify-center mt-4 max-w-full mx-6 gap-3">
-              <a href={item.link} className="w-full h-full flex justify-center" target="_blank">
+              <a href={item.link} className="w-full h-full flex justify-center cursor-pointer" target="_blank">
                 <button
-                className={`w-1/2 py-2 bg-${item.button} text-${item.buttonText} text-[12px] sm:text-[14px]`}
+                className={`w-1/2 py-2 bg-${item.button} text-${item.buttonText} text-[12px] sm:text-[14px] cursor-pointer`}
               >
                 Figma
               </button>
